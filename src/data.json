@@ -1,0 +1,217 @@
+[
+    {
+        "id": 1,
+        "style": 1,
+        "name": "길드너",
+        "element": "불",
+        "weapon": "검",
+        "free": true
+    },{ 
+        "id": 2,
+        "style": 2,
+        "name": "메리나",
+        "element": "물",
+        "weapon": "망치"
+    },{
+        "id": 2,
+        "style": 3,
+        "name": "메리나",
+        "element": "뇌",
+        "weapon": "권갑"
+    },{
+        "id": 3,
+        "style": 1,
+        "name": "아카네",
+        "element": "불",
+        "weapon": "도", 
+        "nonormal": true
+    },{
+        "id": 4,
+        "style": 2,
+        "name": "베이나",
+        "element": "바람",
+        "weapon": "지팡이" 
+    },{
+        "id": 5,
+        "style": 2,
+        "name": "마리엘",
+        "element": "바람",
+        "weapon": "지팡이" 
+    },{
+        "id": 6,
+        "style": 2,
+        "name": "듀나리스",
+        "element": "바람",
+        "weapon": "지팡이" 
+    },{
+        "id": 7,
+        "style": 2,
+        "name": "마이티",
+        "element": "물",
+        "weapon": "지팡이" 
+    },{
+        "id": 8,
+        "style": 2,
+        "name": "투바",
+        "element": "땅",
+        "weapon": "지팡이" 
+    },{
+        "id": 9,
+        "style": 1,
+        "name": "비베트",
+        "element": "불",
+        "weapon": "지팡이" 
+    },{
+        "id": 10,
+        "style": 2,
+        "name": "가리유",
+        "element": "불",
+        "weapon": "지팡이" 
+    },{
+        "id": 11,
+        "style": 2,
+        "name": "유나",
+        "element": "물",
+        "weapon": "지팡이" 
+    },{
+        "id": 12,
+        "style": 2,
+        "name": "라디카",
+        "element": "불",
+        "weapon": "지팡이" 
+    },{
+        "id": 13,
+        "style": 2,
+        "name": "뮬루스",
+        "element": "땅",
+        "weapon": "지팡이" 
+    },{
+        "id": 14,
+        "style": 1,
+        "name": "사키",
+        "element": "물",
+        "weapon": "지팡이",
+        "nonormal": true,
+        "free": true 
+    },{
+        "id": 15,
+        "style": 2,
+        "name": "로제타",
+        "element": "불",
+        "weapon": "지팡이" 
+    },{
+        "id": 16,
+        "style": 1,
+        "name": "클라르테",
+        "element": "정",
+        "weapon": "지팡이",
+        "free": true 
+    },{
+        "id": 17,
+        "style": 2,
+        "name": "아나벨",
+        "element": "물",
+        "weapon": "검"
+    },{
+        "id": 18,
+        "style": 1,
+        "name": "루이나",
+        "element": "바람",
+        "weapon": "검",
+        "nonormal": true
+    },{
+        "id": 19,
+        "style": 1,
+        "name": "레비아",
+        "element": "물",
+        "weapon": "지팡이",
+        "free": true 
+    },{
+        "id": 20,
+        "style": 2,
+        "name": "미유",
+        "element": "불",
+        "weapon": "검"
+    },{
+        "id": 21,
+        "style": 1,
+        "name": "디아드라",
+        "element": "땅",
+        "weapon": "검",
+        "free": true 
+    },{
+        "id": 22,
+        "style": 2,
+        "name": "셰이네",
+        "element": "물",
+        "weapon": "검"
+    },{
+        "id": 23,
+        "style": 2,
+        "name": "섀넌",
+        "element": "바람",
+        "weapon": "검"
+    },{
+        "id": 24,
+        "style": 1,
+        "name": "신시아",
+        "element": "바람",
+        "weapon": "검"
+    },{
+        "id": 25,
+        "style": 1,
+        "name": "라디아스",
+        "element": "불",
+        "weapon": "검"
+    },{
+        "id": 26,
+        "style": 1,
+        "name": "틸릴",
+        "element": "불",
+        "weapon": "검"
+    },{
+        "id": 27,
+        "style": 1,
+        "name": "아자미",
+        "element": "바람",
+        "weapon": "도",
+        "free": true
+    },{
+        "id": 28,
+        "style": 1,
+        "name": "니케",
+        "element": "물",
+        "weapon": "도",
+        "nonormal": true
+    },{
+        "id": 29,
+        "style": 2,
+        "name": "시온",
+        "element": "불",
+        "weapon": "도"
+    },{
+        "id": 30,
+        "style": 2,
+        "name": "이스카",
+        "element": "바람",
+        "weapon": "도"
+    },{
+        "id": 31,
+        "style": 2,
+        "name": "츠키하",
+        "element": "불",
+        "weapon": "도"
+    },{
+        "id": 32,
+        "style": 2,
+        "name": "엘가",
+        "element": "땅",
+        "weapon": "도"
+    },{
+        "id": 33,
+        "style": 2,
+        "name": "시구레",
+        "element": "물",
+        "weapon": "도"
+    }
+]

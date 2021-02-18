@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.gray{
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%); 
+  -o-filter: grayscale(100%); 
+  filter: grayscale(100%);
+}
