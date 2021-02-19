@@ -13,7 +13,7 @@
         "element": "물",
         "weapon": "망치"
     },{
-        "id": 2,
+        "id": 302,
         "style": 3,
         "name": "메리나",
         "element": "뇌",
@@ -167,7 +167,7 @@
         "id": 26,
         "style": 1,
         "name": "틸릴",
-        "element": "불",
+        "element": "음",
         "weapon": "검"
     },{
         "id": 27,
@@ -213,5 +213,342 @@
         "name": "시구레",
         "element": "물",
         "weapon": "도"
+    },{
+        "id": 34,
+        "style": 1,
+        "name": "빅트",
+        "element": "뇌",
+        "weapon": "도"
+    },{
+        "id": 35,
+        "style": 1,
+        "name": "히이나",
+        "element": "바람",
+        "weapon": "도"
+    },{
+        "id": 36,
+        "style": 1,
+        "name": "멜리사",
+        "element": "정",
+        "weapon": "도"
+    },{
+        "id": 37,
+        "style": 2,
+        "name": "나기",
+        "element": "땅",
+        "weapon": "도끼"
+    },{
+        "id": 38,
+        "style": 2,
+        "name": "렌리",
+        "element": "불",
+        "weapon": "도끼"
+    },{
+        "id": 39,
+        "style": 2,
+        "name": "이루루",
+        "element": "바람",
+        "weapon": "도끼"
+    },{
+        "id": 40,
+        "style": 1,
+        "name": "필로",
+        "element": "물",
+        "weapon": "도끼"
+    },{
+        "id": 41,
+        "style": 1,
+        "name": "키쿄",
+        "element": "바람",
+        "weapon": "도끼"
+    },{
+        "id": 42,
+        "style": 1,
+        "name": "제빌로",
+        "element": "물",
+        "weapon": "도끼"
+    },{
+        "id": 43,
+        "style": 1,
+        "name": "소피아",
+        "element": "물",
+        "weapon": "도끼",
+        "free": true
+    },{
+        "id": 44,
+        "style": 2,
+        "name": "수제트",
+        "element": "바람",
+        "weapon": "창"
+    },{
+        "id": 45,
+        "style": 1,
+        "name": "포란",
+        "element": "물",
+        "weapon": "창",
+        "nonormal": true
+    },{
+        "id": 46,
+        "style": 2,
+        "name": "세티",
+        "element": "불",
+        "weapon": "창"
+    },{
+        "id": 47,
+        "style": 2,
+        "name": "베르트랑",
+        "element": "땅",
+        "weapon": "창"
+    },{
+        "id": 48,
+        "style": 1,
+        "name": "제이드",
+        "element": "불",
+        "weapon": "창", 
+        "free": true
+    },{
+        "id": 49,
+        "style": 2,
+        "name": "히스메나",
+        "element": "물",
+        "weapon": "창"
+    },{
+        "id": 50,
+        "style": 2,
+        "name": "티라미수",
+        "element": "땅",
+        "weapon": "창"
+    },{
+        "id": 51,
+        "style": 1,
+        "name": "미르샤",
+        "element": "음",
+        "weapon": "창"
+    },{
+        "id": 52,
+        "style": 1,
+        "name": "이웨라",
+        "element": "정",
+        "weapon": "창"
+    },{
+        "id": 53,
+        "style": 2,
+        "name": "시엘",
+        "element": "땅",
+        "weapon": "활"
+    },{
+        "id": 54,
+        "style": 2,
+        "name": "라클레어",
+        "element": "물",
+        "weapon": "활"
+    },{
+        "id": 55,
+        "style": 2,
+        "name": "클로드",
+        "element": "바람",
+        "weapon": "활"
+    },{
+        "id": 56,
+        "style": 2,
+        "name": "호오즈키",
+        "element": "불",
+        "weapon": "활"
+    },{
+        "id": 57,
+        "style": 1,
+        "name": "프레메아",
+        "element": "땅",
+        "weapon": "활"
+    },{
+        "id": 58,
+        "style": 1,
+        "name": "미스트레아",
+        "element": "정",
+        "weapon": "활"
+    },{
+        "id": 59,
+        "style": 1,
+        "name": "유키노",
+        "element": "물",
+        "weapon": "활"
+    },{
+        "id": 60,
+        "style": 2,
+        "name": "로키드",
+        "element": "땅",
+        "weapon": "권갑"
+    },{
+        "id": 61,
+        "style": 1,
+        "name": "셀리느",
+        "element": "땅",
+        "weapon": "권갑",
+        "free": true
+    },{
+        "id": 62,
+        "style": 2,
+        "name": "펠미나",
+        "element": "바람",
+        "weapon": "권갑"
+    },{
+        "id": 63,
+        "style": 1,
+        "name": "듀이",
+        "element": "물",
+        "weapon": "권갑"
+    },{
+        "id": 64,
+        "style": 1,
+        "name": "츠바메",
+        "element": "땅",
+        "weapon": "권갑"
+    },{
+        "id": 65,
+        "style": 1,
+        "name": "러블리",
+        "element": "불",
+        "weapon": "권갑"
+    },{
+        "id": 66,
+        "style": 1,
+        "name": "하디",
+        "element": "불",
+        "weapon": "권갑"
+    },{
+        "id": 67,
+        "style": 2,
+        "name": "유인",
+        "element": "불",
+        "weapon": "망치"
+    },{
+        "id": 68,
+        "style": 1,
+        "name": "비아카",
+        "element": "바람",
+        "weapon": "망치"
+    },{
+        "id": 69,
+        "style": 1,
+        "name": "밍화",
+        "element": "땅",
+        "weapon": "망치"
+    },{
+        "id": 70,
+        "style": 1,
+        "name": "이프",
+        "element": "바람",
+        "weapon": "망치"
+    },{
+        "id": 71,
+        "style": 1,
+        "name": "브리아",
+        "element": "물",
+        "weapon": "창"
+    },{
+        "id": 72,
+        "style": 1,
+        "name": "짚돌이",
+        "element": "불",
+        "weapon": "권갑",
+        "free": true
+    },{
+        "id": 73,
+        "style": 1,
+        "name": "스컬",
+        "element": "뇌",
+        "weapon": "망치",
+        "free": true
+    },{
+        "id": 74,
+        "style": 1,
+        "name": "바이올렛",
+        "element": "땅",
+        "weapon": "검",
+        "free": true
+    },{
+        "id": 75,
+        "style": 1,
+        "name": "조커",
+        "element": "불",
+        "weapon": "검",
+        "free": true
+    },{
+        "id": 76,
+        "style": 1,
+        "name": "모르가나",
+        "element": "바람",
+        "weapon": "검",
+        "free": true
+    },{
+        "id": 77,
+        "style": 1,
+        "name": "클레스",
+        "element": "불",
+        "weapon": "검",
+        "free": true
+    },{
+        "id": 78,
+        "style": 1,
+        "name": "유리",
+        "element": "바람",
+        "weapon": "도",
+        "free": true
+    },{
+        "id": 79,
+        "style": 1,
+        "name": "미라",
+        "element": "물",
+        "weapon": "검",
+        "free": true
+    },{
+        "id": 80,
+        "style": 1,
+        "name": "벨벳",
+        "element": "땅",
+        "weapon": "검",
+        "free": true
+    },{
+        "id": 81,
+        "style": 1,
+        "name": "헬레나",
+        "element": "땅",
+        "weapon": "지팡이",
+        "free": true
+    },{
+        "id": 82,
+        "style": 1,
+        "name": "알도",
+        "element": "불",
+        "weapon": "검",
+        "free": true
+    },{
+        "id": 83,
+        "style": 1,
+        "name": "알테나",
+        "element": "불",
+        "weapon": "활",
+        "free": true
+    },{
+        "id": 84,
+        "style": 1,
+        "name": "사이러스",
+        "element": "물",
+        "weapon": "도",
+        "free": true
+    },{
+        "id": 85,
+        "style": 1,
+        "name": "에이미",
+        "element": "바람",
+        "weapon": "권갑",
+        "free": true
+    },{
+        "id": 86,
+        "style": 1,
+        "name": "리이카",
+        "element": "땅",
+        "weapon": "망치",
+        "free": true
     }
 ]

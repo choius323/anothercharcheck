@@ -6,22 +6,22 @@ SPDX-FileCopyrightText: © 2021 Hyun Uk Lee <as0266@naver.com>
 SPDX-License-Identifier: MIT
 --*/  
 
-const initialState = []
+const initialState = {
+    linked: false,
+    info: []
+}
 
 const counter = (state=initialState, action) => {
     switch(action.type) {
-        case types.SET_NONE:
-            return state.filter(item => item !== action.char)
-        case types.SET_45:
+        case types.TOGGLE_LINKED:
             return {
                 ...state,
-                language: action.language
+                linked: !state.linked
             }
-        case types.SET_NO5:
-            return {
-                ...state,
-                garul_time: garuls[action.garul_time]
-            }
+        case types.SET_CHARACTER:
+            return {...state, info: action.array}
+        case types.DELETE_CHARACTER:
+            return {...state, info: state.info.filter(a => a.id !== action.id)}
         default: 
             return state;
     }

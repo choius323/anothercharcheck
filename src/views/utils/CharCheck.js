@@ -1,16 +1,51 @@
 import React, { useState, useEffect } from 'react';
 import { Tooltip } from "antd";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCharacter, deleteCharacter } from '../../_actions/actions';
+
+const only5Char = ["레비아", "바이올렛", "스컬", "모르가나", "마나", "알테나", "짚돌이"]
 
 function CharCheck({character}) {
     
+    const dispatch = useDispatch();
 
-    const [Normal, setNormal] = useState(0)
-    const [Another, setAnother] = useState(false)
-    const [Extra, setExtra] = useState(false)
+    const info = JSON.parse(window.localStorage.getItem("characterinfo")) 
+               ? JSON.parse(window.localStorage.getItem("characterinfo")) : [];
+        
+    const target = info.find(a => a.id === character.id) 
+                 ? info.find(a => a.id === character.id) 
+                 : { normal: 0, another: 0, extra: 0 }
 
+    const [Normal, setNormal] = useState(only5Char.indexOf(character.name) >= 0 ? 0 : target.normal)
+    const [Only5Normal, setOnly5Normal] = useState(only5Char.indexOf(character.name) >= 0 ? target.normal : 0)
+    const [Another, setAnother] = useState(target.another)
+    const [Extra, setExtra] = useState(target.extra)
+
+
+    const saveCharacter = () => {
+        const characterInfo = JSON.parse(window.localStorage.getItem("characterinfo")) 
+                            ? JSON.parse(window.localStorage.getItem("characterinfo")) : [];
+        let newArray;
+        const char = {
+            id: character.id,
+            normal: Only5Normal + Normal,
+            another: Another,
+            extra: Extra
+        };
+        if(char.normal === 0 && !char.another && !char.extra) {
+            newArray = characterInfo.filter(a => a.id !== char.id)
+        } else {
+            newArray = [...characterInfo.filter(a => a.id !== char.id), char]
+        }
+        window.localStorage.setItem("characterinfo", JSON.stringify(newArray))
+        dispatch(setCharacter(newArray))
+    }
     const toggleNormal = () => {
         setNormal((Normal+1)%3)
+    }
+
+    const toggleOnly5Normal = () => {
+        setOnly5Normal((Only5Normal+1)%2)
     }
 
     const toggleAnother = () => {
@@ -21,11 +56,23 @@ function CharCheck({character}) {
         setExtra(!Extra)
     }
 
-    if(character.style < 3) {
+    useEffect(() => {
+        saveCharacter();
+    }, [Normal, Only5Normal, Extra, Another])
+
+    if(only5Char.indexOf(character.name) >= 0) {
+        return (
+            <Tooltip title={character.name}>
+                <img onClick={toggleOnly5Normal} className={Only5Normal === 0 ? "gray" : null}
+                src={`images/character_base/${character.id}_1.png`} 
+                style={{width:70}}/>
+            </Tooltip>
+        )
+    } else if(character.style < 3) {
         return (
             <React.Fragment>
                 <Tooltip title={`${character.name}${Normal===2 && character.nonormal ? "(AS)" : ""}`}>
-                    <img onClick={toggleNormal} className={`cha_fs_${character.id} ${Normal === 0 ? "gray" : null}`}
+                    <img onClick={toggleNormal} className={Normal === 0 ? "gray" : null}
                     src={`images/character_base/${character.id}_${Normal===2 ? 1 : 0}.png`} 
                     style={{width:70}}/>
                 </Tooltip>
@@ -42,8 +89,8 @@ function CharCheck({character}) {
             <React.Fragment>
                 <Tooltip title={`${character.name}(ES)`}>
                     <img className={Extra ? null : "gray"} onClick={toggleExtra} 
-                         src={`images/character_base/${character.id}_3.png`}
-                         style={{width:70}} />
+                        src={`images/character_base/${character.id}_3.png`}
+                        style={{width:70}} />
                 </Tooltip>
             </React.Fragment>
         )

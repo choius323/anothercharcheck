@@ -18,3 +18,7 @@ code {
   -o-filter: grayscale(100%); 
   filter: grayscale(100%);
 }
+
+.checker {
+  background-color: white;
+}
