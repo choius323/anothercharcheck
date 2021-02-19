@@ -7,7 +7,7 @@ SPDX-License-Identifier: MIT
 --*/  
 
 const initialState = {
-    linked: false,
+    linked: window.localStorage.getItem("linked") === "true" || false,
     info: []
 }
 
@@ -16,7 +16,7 @@ const counter = (state=initialState, action) => {
         case types.TOGGLE_LINKED:
             return {
                 ...state,
-                linked: !state.linked
+                linked: action.linked
             }
         case types.SET_CHARACTER:
             return {...state, info: action.array}

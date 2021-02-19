@@ -449,7 +449,7 @@
         "id": 72,
         "style": 1,
         "name": "짚돌이",
-        "element": "불",
+        "element": "정",
         "weapon": "권갑",
         "free": true
     },{
@@ -526,7 +526,7 @@
         "id": 83,
         "style": 1,
         "name": "알테나",
-        "element": "불",
+        "element": "정",
         "weapon": "활",
         "free": true
     },{
@@ -549,6 +549,13 @@
         "name": "리이카",
         "element": "땅",
         "weapon": "망치",
+        "free": true
+    },{
+        "id": 87,
+        "style": 1,
+        "name": "마나",
+        "element": "땅",
+        "weapon": "활",
         "free": true
     }
 ]

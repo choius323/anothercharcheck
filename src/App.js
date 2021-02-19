@@ -6,7 +6,7 @@ import ResultPage from './views/ResultPage';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/anothercharcheck">
       <NavBar />
       <Route exact path="/" component={CheckPage} />
       <Route exact path="/result" component={ResultPage} />

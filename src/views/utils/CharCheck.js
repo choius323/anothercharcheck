@@ -14,7 +14,7 @@ function CharCheck({character}) {
         
     const target = info.find(a => a.id === character.id) 
                  ? info.find(a => a.id === character.id) 
-                 : { normal: 0, another: 0, extra: 0 }
+                 : { normal: 0, another: false, extra: false }
 
     const [Normal, setNormal] = useState(only5Char.indexOf(character.name) >= 0 ? 0 : target.normal)
     const [Only5Normal, setOnly5Normal] = useState(only5Char.indexOf(character.name) >= 0 ? target.normal : 0)
