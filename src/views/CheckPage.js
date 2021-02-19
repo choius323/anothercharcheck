@@ -5,6 +5,12 @@ import data from '../data.json';
 import CharWeaponList from './utils/CharWeaponList';
 import CharCheck from './utils/CharCheck';
 
+/*-- 
+SPDX-FileCopyrightText: © 2021 Hyun Uk Lee <as0266@naver.com>
+
+SPDX-License-Identifier: MIT
+--*/ 
+
 const weapons = ["지팡이", "검", "도", "도끼", "창", "활", "권갑", "망치"]
 const elements = ["불", "물", "바람", "땅"]
 const elements2 = [ "음", "뇌", "정"]

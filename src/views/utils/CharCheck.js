@@ -3,6 +3,12 @@ import { Tooltip } from "antd";
 import { useDispatch, useSelector } from 'react-redux';
 import { setCharacter, deleteCharacter } from '../../_actions/actions';
 
+/*-- 
+SPDX-FileCopyrightText: © 2021 Hyun Uk Lee <as0266@naver.com>
+
+SPDX-License-Identifier: MIT
+--*/ 
+
 const only5Char = ["레비아", "바이올렛", "스컬", "모르가나", "마나", "알테나", "짚돌이"]
 
 function CharCheck({character}) {

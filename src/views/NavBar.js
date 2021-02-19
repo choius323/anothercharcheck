@@ -6,6 +6,12 @@ import domtoimage from 'dom-to-image';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleLinked } from '../_actions/actions';
 
+/*-- 
+SPDX-FileCopyrightText: © 2021 Hyun Uk Lee <as0266@naver.com>
+
+SPDX-License-Identifier: MIT
+--*/ 
+
 function NavBar() {
 
     const dispatch = useDispatch();
@@ -42,8 +48,8 @@ function NavBar() {
                 </Col>
                 <Col xs={12} md={4}>
                     <Link style={{textDecoration: "none"}} to={`/${RealLink ? "" : "result"}`}><div onClick={toggleLink}
-                    style={{backgroundColor: "gray", color: "white", fontWeight: 600, height: "50px",
-                    lineHeight: "50px", borderRadius: "5px"}}>
+                    style={{backgroundColor: "gray", color: "white", fontWeight: 600, height: "35px",
+                    lineHeight: "35px", borderRadius: "5px"}}>
                         {RealLink ? "체크표" : "결과"}
                     </div></Link> 
                 </Col>

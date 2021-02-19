@@ -6,6 +6,12 @@ import Char45View from './utils/Char45View';
 import Char5View from './utils/Char5View';
 import CharElementView from './utils/CharElementView';
 
+/*-- 
+SPDX-FileCopyrightText: © 2021 Hyun Uk Lee <as0266@naver.com>
+
+SPDX-License-Identifier: MIT
+--*/ 
+
 const japOnly = ["미르샤", "이웨라"]
 const korOnly = []
 
@@ -85,7 +91,7 @@ function ResultPage() {
                         </Col>
                     </Row>
                 ))}
-                <Row align="middle">
+                <Row align="middle" style={{marginBottom:"30px"}}>
                     <Col span={4}>
                         <h4><b>기타</b></h4>
                     </Col>
@@ -93,13 +99,13 @@ function ResultPage() {
                         {elements2.map((element) => renderElement(element))}
                     </Col>
                 </Row>
-                <Row justify="center" style={{marginBottom:"30px"}}>
+                <Row style={{marginBottom:"30px"}}>
                     <Col span={24}>
                         <Divider style={{fontSize:"1.2rem"}}><b>일본판에만 있는 캐릭터</b></Divider>
                     </Col>
                     <Col span={24}>{japOnly.length !== 0 ? renderJap() : "없음"}</Col>
                 </Row>
-                <Row justify="center" style={{marginBottom:"30px"}}>
+                <Row>
                     <Col span={24}>
                         <Divider style={{fontSize:"1.2rem"}}><b>글로벌판에만 있는 캐릭터</b></Divider>
                     </Col>

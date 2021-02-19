@@ -2,6 +2,12 @@ import { Tooltip } from 'antd'
 import React from 'react'
 import CharCheck from './CharCheck'
 
+/*-- 
+SPDX-FileCopyrightText: © 2021 Hyun Uk Lee <as0266@naver.com>
+
+SPDX-License-Identifier: MIT
+--*/ 
+
 const elements = ["불", "물", "바람", "땅"]
 const elements2 = [ "음", "뇌", "정"]
 
