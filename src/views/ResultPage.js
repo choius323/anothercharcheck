@@ -1,10 +1,11 @@
 import { Col, Divider, Row } from 'antd'
-import React from 'react'
-import { useSelector } from 'react-redux';
-import data from '../data.json';
-import Char45View from './utils/Char45View';
+import React, { useEffect } from 'react'
+import data from './data/data.json';
 import Char5View from './utils/Char5View';
 import CharElementView from './utils/CharElementView';
+import {withRouter} from "react-router-dom";
+import { useSelector } from 'react-redux';
+import array from "./data/array.json";
 
 /*-- 
 SPDX-FileCopyrightText: © 2021 Hyun Uk Lee <as0266@naver.com>
@@ -12,16 +13,20 @@ SPDX-FileCopyrightText: © 2021 Hyun Uk Lee <as0266@naver.com>
 SPDX-License-Identifier: MIT
 --*/ 
 
-const japOnly = ["미르샤", "이웨라"]
-const korOnly = []
-
 const elements = ["불", "물", "바람", "땅"]
 const elements2 = [ "음", "뇌", "정"]
 
-function ResultPage() {
+function ResultPage(props) {
 
     const info = JSON.parse(window.localStorage.getItem("characterinfo")) 
                ? JSON.parse(window.localStorage.getItem("characterinfo")) : [];
+
+       const linked = useSelector(state => state.linked)
+
+       useEffect(() => {
+           if(!linked)
+               props.history.push("/")
+       }, [])
 
     const renderNo = () => {
         const infoIDs = info.map(a => a.id)
@@ -36,19 +41,19 @@ function ResultPage() {
         const data45 = info45.map(b => data.find(item => item.id === b.id))
         const data45parsed = data45.filter(b => !b.free)
         return data45parsed.map((item, index) => (
-            <Char45View key={index} character={item} />
+            <Char5View key={index} character={item} lower={true} />
         ))
     }
 
     const renderJap = () => {
-        const dataJap = data.filter(b => japOnly.includes(b.name) && b.id < 300)
+        const dataJap = data.filter(b => array.japOnly.includes(b.name) && b.id < 300)
         return dataJap.map((item, index) => (
             <Char5View key={index} character={item} />
         ))
     } 
 
     const renderKor = () => {
-        const dataKor = data.filter(b => korOnly.includes(b.name) && b.id < 300)
+        const dataKor = data.filter(b => array.korOnly.includes(b.name) && b.id < 300)
         return dataKor.map((item, index) => (
             <Char5View key={index} character={item} />
         ))
@@ -101,19 +106,19 @@ function ResultPage() {
                 </Row>
                 <Row style={{marginBottom:"30px"}}>
                     <Col span={24}>
-                        <Divider style={{fontSize:"1.2rem"}}><b>일본판에만 있는 캐릭터</b></Divider>
+                        <Divider style={{fontSize:"1.1rem"}}><b>일본판에만 있는 캐릭터(원판)</b></Divider>
                     </Col>
-                    <Col span={24}>{japOnly.length !== 0 ? renderJap() : "없음"}</Col>
+                    <Col span={24}>{array.japOnly.length !== 0 ? renderJap() : "없음"}</Col>
                 </Row>
                 <Row>
                     <Col span={24}>
-                        <Divider style={{fontSize:"1.2rem"}}><b>글로벌판에만 있는 캐릭터</b></Divider>
+                        <Divider style={{fontSize:"1.1rem"}}><b>글로벌판에만 있는 캐릭터(원판)</b></Divider>
                     </Col>
-                    <Col span={24}>{korOnly.length !== 0  ? renderKor() : "없음"}</Col>
+                    <Col span={24}>{array.korOnly.length !== 0  ? renderKor() : "없음"}</Col>
                 </Row>
             </div>
         </div>
     )
 }
 
-export default ResultPage
+export default withRouter(ResultPage)

@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {Container, Table} from 'react-bootstrap'
-import NavBar from './NavBar';
-import data from '../data.json';
+import data from './data/data.json';
 import CharWeaponList from './utils/CharWeaponList';
 import CharCheck from './utils/CharCheck';
-
+import {withRouter} from "react-router-dom";
+import { useSelector } from 'react-redux';
+ 
 /*-- 
 SPDX-FileCopyrightText: © 2021 Hyun Uk Lee <as0266@naver.com>
 
@@ -15,9 +16,16 @@ const weapons = ["지팡이", "검", "도", "도끼", "창", "활", "권갑", "�
 const elements = ["불", "물", "바람", "땅"]
 const elements2 = [ "음", "뇌", "정"]
 
-function CheckPage() {
+function CheckPage(props) {
 
     const filtered = data.filter(item => item.free)
+
+    const linked = useSelector(state => state.linked)
+
+    useEffect(() => {
+        if(linked)
+            props.history.push("/result")
+    }, [])
 
     return (
             <Container fluid style={{textAlign: "center", margin:"0 auto"}}>
@@ -55,4 +63,4 @@ function CheckPage() {
     )
 }
 
-export default CheckPage
+export default withRouter(CheckPage)

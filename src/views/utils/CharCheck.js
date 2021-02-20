@@ -2,14 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Tooltip } from "antd";
 import { useDispatch, useSelector } from 'react-redux';
 import { setCharacter, deleteCharacter } from '../../_actions/actions';
+import array from "../data/array.json";
 
 /*-- 
 SPDX-FileCopyrightText: © 2021 Hyun Uk Lee <as0266@naver.com>
 
 SPDX-License-Identifier: MIT
 --*/ 
-
-const only5Char = ["레비아", "바이올렛", "스컬", "모르가나", "마나", "알테나", "짚돌이"]
 
 function CharCheck({character}) {
     
@@ -22,8 +21,8 @@ function CharCheck({character}) {
                  ? info.find(a => a.id === character.id) 
                  : { normal: 0, another: false, extra: false }
 
-    const [Normal, setNormal] = useState(only5Char.indexOf(character.name) >= 0 ? 0 : target.normal)
-    const [Only5Normal, setOnly5Normal] = useState(only5Char.indexOf(character.name) >= 0 ? target.normal : 0)
+    const [Normal, setNormal] = useState(array.only5Char.indexOf(character.name) >= 0 ? 0 : target.normal)
+    const [Only5Normal, setOnly5Normal] = useState(array.only5Char.indexOf(character.name) >= 0 ? target.normal : 0)
     const [Another, setAnother] = useState(target.another)
     const [Extra, setExtra] = useState(target.extra)
 
@@ -66,7 +65,7 @@ function CharCheck({character}) {
         saveCharacter();
     }, [Normal, Only5Normal, Extra, Another])
 
-    if(only5Char.indexOf(character.name) >= 0) {
+    if(array.only5Char.indexOf(character.name) >= 0) {
         return (
             <Tooltip title={character.name}>
                 <img onClick={toggleOnly5Normal} className={Only5Normal === 0 ? "gray" : null}
@@ -92,13 +91,11 @@ function CharCheck({character}) {
         )
     } else {
         return (
-            <React.Fragment>
-                <Tooltip title={`${character.name}(ES)`}>
-                    <img className={Extra ? null : "gray"} onClick={toggleExtra} 
-                        src={`images/character_base/${character.id}_3.png`}
-                        style={{width:70}} />
-                </Tooltip>
-            </React.Fragment>
+            <Tooltip title={`${character.name}(ES)`}>
+                <img className={Extra ? null : "gray"} onClick={toggleExtra} 
+                    src={`images/character_base/${character.id}_3.png`}
+                    style={{width:70}} />
+            </Tooltip>
         )
     }
 }

@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Tooltip } from "antd";
+import array from "../data/array.json";
 
 /*-- 
 SPDX-FileCopyrightText: © 2021 Hyun Uk Lee <as0266@naver.com>
@@ -7,11 +8,9 @@ SPDX-FileCopyrightText: © 2021 Hyun Uk Lee <as0266@naver.com>
 SPDX-License-Identifier: MIT
 --*/ 
 
-const only5Char = ["레비아", "바이올렛", "스컬", "모르가나", "마나", "알테나", "짚돌이"]
-
 function CharElementView({character, refer}) {
 
-    if(only5Char.indexOf(character.name) >= 0) {
+    if(array.only5Char.indexOf(character.name) >= 0) {
         return (
             <Tooltip title={character.name}>
                 <img src={`images/character_base/${character.id}_1.png`} 
@@ -43,7 +42,6 @@ function CharElementView({character, refer}) {
                         style={{width:70}} />
                 </Tooltip>
                 }
-                
             </React.Fragment>
         )
     }

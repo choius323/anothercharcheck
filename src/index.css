@@ -22,3 +22,7 @@ code {
 .checker {
   background-color: white;
 }
+
+.half {
+  opacity: 0.4;
+}
