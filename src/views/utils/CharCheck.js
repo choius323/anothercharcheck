@@ -77,9 +77,12 @@ function CharCheck({character}) {
         return (
             <React.Fragment>
                 <Tooltip title={`${character.name}${Normal===2 && character.nonormal ? "(AS)" : ""}`}>
-                    <img onClick={toggleNormal} className={Normal === 0 ? "gray" : null}
-                    src={`images/character_base/${character.id}_${Normal===2 ? 1 : 0}.png`} 
-                    style={{width:70}}/>
+                     <div style={{position: "relative", width:70, display: "inline-block"}}>
+                        <div style={{position: "absolute", fontSize:"2rem", left: "5px", backgroundColor: "yellow"}}>{Normal===1 ? "4" : null}</div>
+                        <img onClick={toggleNormal} className={Normal === 0 ? "gray" : null}
+                        src={`images/character_base/${character.id}_${Normal===2 ? 1 : 0}.png`} 
+                        style={{width:70}}/>
+                     </div>
                 </Tooltip>
                 {character.style > 1 ? 
                 <Tooltip title={`${character.name}(AS)`}>

@@ -10,9 +10,12 @@ SPDX-License-Identifier: MIT
 
 function Char5View({character, lower}) {
     return (
-        <Tooltip title={character.name}>
-            <img src={`images/character_base/${character.id}_${lower ? "0" : "1"}.png`} 
-            style={{width:70}} className={array.japOnly.includes(character.name) ? "half" : null}/>
+        <Tooltip title={`${character.name}${lower === "3" ? "(ES)" : ""}`}>
+            <img src={`images/character_base/${character.id}_${lower ? lower : "1"}.png`} 
+            style={{width:70}} 
+            className={array.japOnly.includes(character.name) 
+                       || (lower === "3" && array.notES.includes(character.name) ) 
+                       ? "half" : null}/>
         </Tooltip>
     )
 }

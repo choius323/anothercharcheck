@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {Container, Table} from 'react-bootstrap'
 import data from './data/data.json';
 import CharWeaponList from './utils/CharWeaponList';
 import CharCheck from './utils/CharCheck';
 import {withRouter} from "react-router-dom";
 import { useSelector } from 'react-redux';
+
  
 /*-- 
 SPDX-FileCopyrightText: © 2021 Hyun Uk Lee <as0266@naver.com>
