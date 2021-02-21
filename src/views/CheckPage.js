@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import {Container, Table} from 'react-bootstrap'
 import data from './data/data.json';
 import CharWeaponList from './utils/CharWeaponList';

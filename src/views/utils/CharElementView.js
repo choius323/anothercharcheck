@@ -21,7 +21,7 @@ function CharElementView({character, refer}) {
         return (
             <React.Fragment>
                 {refer.normal === 2 ? 
-                <Tooltip title={character.name}>
+                <Tooltip title={`${character.name}${character.nonormal ? "(AS)" : ""}`}>
                     <img src={`images/character_base/${character.id}_1.png`} 
                     style={{width:70}}/>
                 </Tooltip> : null}

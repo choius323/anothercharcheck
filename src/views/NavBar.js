@@ -1,11 +1,12 @@
-import React, {useState, useEffect} from 'react'
-import {Container} from 'react-bootstrap'
-import { Row, Col, Button} from "antd";
+import React, { useState } from 'react'
+import { Container } from 'react-bootstrap'
+import { Row, Col } from "antd";
 import { Link } from 'react-router-dom'
-import domtoimage from 'dom-to-image';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleLinked } from '../_actions/actions';
-import html2canvas from 'html2canvas';
+
+import Downloader from './utils/Downloader';
+import DataLoader from './utils/DataLoader';
 
 
 /*-- 
@@ -19,30 +20,8 @@ function NavBar() {
     const dispatch = useDispatch();
 
     const Linked = useSelector(state => state.linked)
-    
-    const [RealLink, setRealLink] = useState(Linked)
 
-    const handleSaveClick = () => {
-        const varUA = navigator.userAgent.toLowerCase();
-        if ( varUA.indexOf("iphone") > -1||varUA.indexOf("ipad") > -1||varUA.indexOf("ipod") > -1 ) {
-            console.log("html2canvas 실행됨");
-            html2canvas(document.querySelector('.checker'), {
-                onrendered: function (canvas) {
-                    let a = document.createElement('a');
-                    a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream")
-                    a.download = `character${RealLink ? "_result" : ""}.png`;
-                    a.click();
-                }
-            })
-        }
-        domtoimage.toJpeg(document.querySelector('.checker'), { quality: 1 })
-        .then(function (dataUrl) {
-           var link = document.createElement('a');
-           link.download = `character${RealLink ? "_result" : ""}.png`;
-           link.href = dataUrl;
-           link.click();
-       });
-    }
+    const [RealLink, setRealLink] = useState(Linked)
 
     const toggleLink = () => {
         const newLinked = !Linked;
@@ -53,12 +32,8 @@ function NavBar() {
 
     return (
         <Container fluid style={{ maxWidth:"1200px", textAlign: "center", margin:"1rem auto"}}>
-            <Row justify="center" align="middle">
-                <Col xs={12} md={4}>
-                    <div className="buttonbar">
-                        <Button type="primary" onClick={handleSaveClick} style={{margin:"1rem"}}>Download</Button>
-                    </div>
-                </Col>
+            <Row justify="center" align="middle" style={{marginBottom: "20px"}}>
+                <Downloader realLink={RealLink}/>
                 <Col xs={12} md={4}>
                     <Link style={{textDecoration: "none"}} to={`/${RealLink ? "" : "result"}`}><div onClick={toggleLink}
                     style={{backgroundColor: "gray", color: "white", fontWeight: 600, height: "35px",
@@ -75,6 +50,7 @@ function NavBar() {
                     </b>
                 </Col>
             </Row>
+            <DataLoader />
         </Container>
     )
 }

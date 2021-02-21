@@ -26,3 +26,16 @@ code {
 .half {
   opacity: 0.4;
 }
+
+.rank4 {
+  position: absolute;
+  font-size: 2rem;
+  left: 5px;
+  background-color: yellow;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

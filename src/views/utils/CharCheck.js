@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Tooltip } from "antd";
-import { useDispatch, useSelector } from 'react-redux';
-import { setCharacter, deleteCharacter } from '../../_actions/actions';
+import { useDispatch } from 'react-redux';
+import { setCharacter } from '../../_actions/actions';
 import array from "../data/array.json";
 
 /*-- 
@@ -77,9 +77,9 @@ function CharCheck({character}) {
         return (
             <React.Fragment>
                 <Tooltip title={`${character.name}${Normal===2 && character.nonormal ? "(AS)" : ""}`}>
-                     <div style={{position: "relative", width:70, display: "inline-block"}}>
-                        <div style={{position: "absolute", fontSize:"2rem", left: "5px", backgroundColor: "yellow"}}>{Normal===1 ? "4" : null}</div>
-                        <img onClick={toggleNormal} className={Normal === 0 ? "gray" : null}
+                     <div onClick={toggleNormal} style={{position: "relative", width:70, display: "inline-block"}}>
+                        <div className="rank4">{Normal===1 ? "4" : null}</div>
+                        <img className={Normal === 0 ? "gray" : null}
                         src={`images/character_base/${character.id}_${Normal===2 ? 1 : 0}.png`} 
                         style={{width:70}}/>
                      </div>

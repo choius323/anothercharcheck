@@ -1,13 +1,13 @@
-import { Col, Divider, Row } from 'antd'
+import { Col, Divider, Row, Collapse } from 'antd'
 import React, { useEffect } from 'react'
+import { withRouter } from "react-router-dom";
+import { useSelector } from 'react-redux';
+import array from "./data/array.json";
 import data from './data/data.json';
 import Char5View from './utils/Char5View';
 import CharElementView from './utils/CharElementView';
-import {withRouter} from "react-router-dom";
-import { useSelector } from 'react-redux';
-import array from "./data/array.json";
 import CharASView from './utils/CharASVIew';
-import { Collapse } from 'antd';
+import KorJapLimited from './utils/KorJapLimited';
 
 const { Panel } = Collapse;
 
@@ -49,19 +49,6 @@ function ResultPage(props) {
         ))
     }
 
-    const renderJap = () => {
-        const dataJap = data.filter(b => array.japOnly.includes(b.name) && b.id < 300)
-        return dataJap.map((item, index) => (
-            <Char5View key={index} character={item} />
-        ))
-    } 
-
-    const renderKor = () => {
-        const dataKor = data.filter(b => array.korOnly.includes(b.name) && b.id < 300)
-        return dataKor.map((item, index) => (
-            <Char5View key={index} character={item} />
-        ))
-    } 
 
     const renderElement = (element) => {
         const dataElement = info.map(item => data.find(a => a.id === item.id)).filter(b => b.element === element)
@@ -80,8 +67,7 @@ function ResultPage(props) {
                 return true
         })
         const dataNS = [...new Set(infoNS.map(a => data.find(b => b.id === a.id%300)))]
-        const dataNSFiltered = dataNS.filter(c => !array.only5Char.includes(c.name) && c.style <= 2)
-        console.log(dataNSFiltered)
+        const dataNSFiltered = dataNS.filter(c => !array.only5Char.includes(c.name) && c.style <= 2 && !c.nonormal)
         return dataNSFiltered.map((item, index) => (
             <Char5View key={index} character={item} />
         ))
@@ -97,8 +83,8 @@ function ResultPage(props) {
                 return true
         })
         const dataAS = [...new Set(infoAS.map(a => data.find(b => b.id === a.id%300)))]
-        console.log(dataAS)
-        const dataASFiltered = dataAS.filter(c => c.style === 2)
+        const dataASFiltered = dataAS.filter(c => c.style === 2 
+            || (c.style === 1 && c.nonormal && info.find(d => d.id === c.id).normal !== 2))
         return dataASFiltered.map((item, index) => (
             <CharASView key={index} character={item} />
         ))
@@ -173,18 +159,7 @@ function ResultPage(props) {
                 </Panel>
             </Collapse>
             </div>
-            <Row>
-                <Col span={24}>
-                    <Divider style={{fontSize:"1.1rem"}}><b>일본판에만 있는 캐릭터(원판)</b></Divider>
-                </Col>
-                <Col span={24}>{array.japOnly.length !== 0 ? renderJap() : "없음"}</Col>
-            </Row>
-            <Row>
-                <Col span={24}>
-                    <Divider style={{fontSize:"1.1rem"}}><b>글로벌판에만 있는 캐릭터(원판)</b></Divider>
-                </Col>
-                <Col span={24} style={{marginBottom:"30px"}}>{array.korOnly.length !== 0  ? renderKor() : "없음"}</Col>
-            </Row>
+            <KorJapLimited />
         </div>
     )
 }
