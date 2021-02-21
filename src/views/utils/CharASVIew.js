@@ -10,7 +10,7 @@ SPDX-License-Identifier: MIT
 
 function CharASView({character}) {
     return (
-        <Tooltip title={`${character.name}(AS)`}>
+        <Tooltip title={`${character.name}(AS) - ${character.sky}, ${character.weapon}`}>
             <img src={`images/character_base/${character.id}_${character.nonormal ? "1" : "2"}.png`} 
             style={{width:70}} className={array.notAS.includes(character.name) ? "half" : null}/>
         </Tooltip>

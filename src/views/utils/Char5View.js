@@ -10,7 +10,7 @@ SPDX-License-Identifier: MIT
 
 function Char5View({character, lower}) {
     return (
-        <Tooltip title={`${character.name}${lower === "3" ? "(ES)" : ""}`}>
+        <Tooltip title={`${character.name}${lower === "3" ? "(ES)" : ""} - ${character.sky}, ${character.weapon}`}>
             <img src={`images/character_base/${character.id}_${lower ? lower : "1"}.png`} 
             style={{width:70}} 
             className={array.japOnly.includes(character.name) 

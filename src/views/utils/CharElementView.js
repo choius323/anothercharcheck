@@ -12,7 +12,7 @@ function CharElementView({character, refer}) {
 
     if(array.only5Char.indexOf(character.name) >= 0) {
         return (
-            <Tooltip title={character.name}>
+            <Tooltip title={`${character.name} - ${character.sky}, ${character.weapon}`}>
                 <img src={`images/character_base/${character.id}_1.png`} 
                 style={{width:70}}/>
             </Tooltip>
@@ -21,13 +21,13 @@ function CharElementView({character, refer}) {
         return (
             <React.Fragment>
                 {refer.normal === 2 ? 
-                <Tooltip title={`${character.name}${character.nonormal ? "(AS)" : ""}`}>
+                <Tooltip title={`${character.name}${character.nonormal ? "(AS)" : ""} - ${character.sky}, ${character.weapon}`}>
                     <img src={`images/character_base/${character.id}_1.png`} 
                     style={{width:70}}/>
                 </Tooltip> : null}
                 
                 {refer.another ? 
-                <Tooltip title={`${character.name}(AS)`}>
+                <Tooltip title={`${character.name}(AS) - ${character.sky}, ${character.weapon}`}>
                     <img src={`images/character_base/${character.id}_2.png`}
                          style={{width:70}} />
                 </Tooltip> : null}
@@ -37,7 +37,7 @@ function CharElementView({character, refer}) {
         return (
             <React.Fragment>
                 {refer.extra && 
-                <Tooltip title={`${character.name}(ES)`}>
+                <Tooltip title={`${character.name}(ES) - ${character.sky}, ${character.weapon}`}>
                     <img src={`images/character_base/${character.id}_3.png`}
                         style={{width:70}} />
                 </Tooltip>
