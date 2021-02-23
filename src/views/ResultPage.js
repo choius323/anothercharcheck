@@ -1,4 +1,4 @@
-import { Col, Divider, Row, Collapse } from 'antd'
+import { Col, Divider, Row, Collapse, Tooltip } from 'antd'
 import React, { useEffect } from 'react'
 import { withRouter } from "react-router-dom";
 import { useSelector } from 'react-redux';
@@ -51,7 +51,8 @@ function ResultPage(props) {
 
 
     const renderElement = (element) => {
-        const dataElement = info.map(item => data.find(a => a.id === item.id)).filter(b => b.element === element)
+        const dataElement = info.map(item => data.find(a => a.id === item.id))
+            .filter(b => b.element === element)
         return dataElement.map((c, index) => (
             <CharElementView key={index} character={c} refer={info.find(i => i.id === c.id)} />
         ))
@@ -103,13 +104,14 @@ function ResultPage(props) {
             <Divider style={{fontSize:"1.1rem"}}><b>제목을 눌러 항목을 펼치고 접을 수 있습니다.</b></Divider>
             <div className="checker">
 
-            <Collapse defaultActiveKey={['1', '2', '3', '4']} style={{fontSize: "1rem", fontWeight: 600}}>
-                <Panel header="명함도 없는 캐릭터" key="1">
+            <Collapse defaultActiveKey={['1', '2', '3', '4']} style={{fontSize: "1rem", fontWeight: 600}}
+             className="resultlabel">
+                <Panel header={`명함도 없는 캐릭터(배포 제외) (${renderNo().length})`} key="1">
                     <Row justify="center" style={{marginBottom:"30px"}}>
                         <Col span={24}>{renderNo()}</Col>
                     </Row>
                 </Panel>
-                <Panel header="4.5성만 있는 캐릭터(배포 제외)" key="2">
+                <Panel header={`4.5성만 있는 캐릭터(배포 제외) (${render45().length})`} key="2">
                     <Row justify="center" style={{marginBottom:"30px"}}>
                         <Col span={24}>{render45()}</Col>
                     </Row>
@@ -118,19 +120,25 @@ function ResultPage(props) {
                     (테일즈 캐릭터는 제외된 결과입니다.)
                     <Row align="middle">                            
                         <Col span={4}>
-                            <h4><b>NS</b></h4>
+                            <Tooltip title={`NS : ${renderNS().length}`}>
+                                <h4><b>NS</b></h4>
+                            </Tooltip>
                         </Col>
                         <Col span={20} style={{textAlign: "left", marginBottom:"5px"}}>
                             {renderNS()}
                         </Col>
                         <Col span={4}>
-                            <h4><b>AS</b></h4>
+                            <Tooltip title={`AS : ${renderAS().length}`}>
+                                <h4><b>AS</b></h4>
+                            </Tooltip>
                         </Col>
                         <Col span={20} style={{textAlign: "left", marginBottom:"5px"}}>
                             {renderAS()}
                         </Col>
                         <Col span={4}>
-                            <h4><b>ES</b></h4>
+                            <Tooltip title={`ES : ${renderES().length}`}>
+                                <h4><b>ES</b></h4>
+                            </Tooltip>
                         </Col>
                         <Col span={20} style={{textAlign: "left", marginBottom:"5px"}}>
                             {renderES()}
@@ -150,7 +158,7 @@ function ResultPage(props) {
                     ))}
                     <Row align="middle">
                         <Col span={4}>
-                            <h4><b>기타</b></h4>
+                            <h4 className="resultlabel"><b>기타</b></h4>
                         </Col>
                         <Col span={20} style={{textAlign: "left", marginBottom:"15px"}}>
                             {elements2.map((element) => renderElement(element))}

@@ -14,6 +14,7 @@ function Char5View({character, lower}) {
             <img src={`images/character_base/${character.id}_${lower ? lower : "1"}.png`} 
             style={{width:70}} 
             className={array.japOnly.includes(character.name) 
+                       || array.notNS.includes(character.name)
                        || (lower === "3" && array.notES.includes(character.name) ) 
                        ? "half" : null}/>
         </Tooltip>

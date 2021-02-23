@@ -47,7 +47,7 @@ function DataLoader() {
     return (
         <Row justify="center">
             <Col span={20} style={{marginBottom: "30px"}}>
-                <Tabs type="card">
+                <Tabs type="card" className="resultlabel">
                     <TabPane tab="데이터 복사" key="1">
                         <Mentions style={{ width: '70%', height: "40px", marginRight: "20px" }} placeholder={JSON.stringify(info)} readOnly />
                         <CopyToClipboard text={JSON.stringify(info)}

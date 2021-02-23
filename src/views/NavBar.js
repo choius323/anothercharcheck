@@ -12,6 +12,7 @@ const { Title } = Typography;
 
 const content = (
     <b style={{fontSize: "0.8rem"}}>
+        본 사이트는 일본판 기준입니다. <br/><br/>
         5성 캐릭터만 정보가 제공됩니다.<br/>
         루나틱 캐릭터를 제외하고, 보드의 속성을 기준으로 분류합니다.<br/>
         ex) 마리엘-바람, 엘가-땅, 신시아-바람 <br/><br/>
@@ -48,7 +49,8 @@ function NavBar() {
             <Row justify="center" align="middle" style={{marginBottom: "20px"}}>
                 <Downloader realLink={RealLink}/>
                 <Col xs={12} md={4} style={{marginBottom: "10px"}}>
-                    <Link style={{textDecoration: "none"}} to={`/${RealLink ? "" : "result"}`}><div onClick={toggleLink}
+                    <Link style={{textDecoration: "none"}} to={`/${RealLink ? "" : "result"}`}>
+                        <div onClick={toggleLink} className="resultlabel"
                     style={{backgroundColor: "gray", color: "white", fontWeight: 600, height: "35px",
                     lineHeight: "35px", borderRadius: "5px"}}>
                         {RealLink ? "체크표" : "결과"}
