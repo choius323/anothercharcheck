@@ -646,5 +646,12 @@
         "weapon": "활",
         "free": true, 
         "sky": "천"
+    },{
+        "id": 88,
+        "style": 1,
+        "name": "멜로디",
+        "element": "바람",
+        "weapon": "지팡이",
+        "sky": "천"
     }
 ]

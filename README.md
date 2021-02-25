@@ -9,7 +9,7 @@ Another Eden Character Check
 
 - 보유한 5성 캐릭터를 체크할 수 있습니다.
 - NS는 클릭하면 4.5성 - 5성 - 없음 순으로 변화합니다.
-- AS는 클릭하면 있음 - 없음이 바뀝니다.
+- AS, ES는 클릭하면 있음 - 없음이 바뀝니다.
 - Download 버튼을 눌러 이미지 형식으로 다운로드 가능합니다.
 
 2. 직업서 검색
@@ -20,7 +20,7 @@ Another Eden Character Check
 - 보유한 5성 캐릭터를 속성별로 정렬합니다.
 - Download 버튼을 눌러 이미지 형식으로 다운로드 가능합니다.
 
-아이폰 일부 기종에서는 다운로드 버튼이 동작하지 않을 수 있습니다.
+iOS 일부 기기에서 다운로드 버튼이 동작하지 않을 수 있습니다.
 
 ### License
 
@@ -31,4 +31,6 @@ MIT License
 
 [Ant Design](https://ant.design/)  
 [Single Page Apps for GitHub Pages](https://github.com/rafgraph/spa-github-pages)
-
+[dom-to-image](https://github.com/tsayen/dom-to-image)
+[html2canvas](https://github.com/niklasvh/html2canvas)
+[react-copy-to-clipboard](https://github.com/nkbt/react-copy-to-clipboard)

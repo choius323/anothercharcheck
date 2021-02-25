@@ -49,7 +49,7 @@ function DataLoader() {
             <Col span={20} style={{marginBottom: "30px"}}>
                 <Tabs type="card" className="resultlabel">
                     <TabPane tab="데이터 복사" key="1">
-                        <Mentions style={{ width: '70%', height: "40px", marginRight: "20px" }} placeholder={JSON.stringify(info)} readOnly />
+                        <Mentions style={{ width: '70%', height: "40px", marginRight: "15px" }} placeholder={JSON.stringify(info)} readOnly />
                         <CopyToClipboard text={JSON.stringify(info)}
                             onCopy={() => alert("체크표 데이터가 복사되었습니다.")}>
                             <Button style={{ height: "40px"}}>Copy</Button>
@@ -57,7 +57,7 @@ function DataLoader() {
                         
                     </TabPane>
                     <TabPane tab="데이터 로드" key="2">
-                        <TextArea style={{ width: '70%', height: "40px", marginRight: "20px" }} value={Data} onChange={onChange} placeholder="가지고 있는 데이터를 입력하세요"/>
+                        <TextArea style={{ width: '70%', height: "40px", marginRight: "15px" }} value={Data} onChange={onChange} placeholder="가지고 있는 데이터를 입력하세요"/>
                         <Button style={{ height: "40px"}} onClick={loadData}>Load</Button>
                     </TabPane>
                 </Tabs>

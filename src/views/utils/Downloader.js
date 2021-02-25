@@ -34,9 +34,9 @@ function Downloader({realLink}) {
     }
 
     return (
-        <Col xs={12} md={4} style={{marginBottom: "10px"}}>
+        <Col xs={9} md={4} style={{marginBottom: "10px"}}>
             <div className="buttonbar">
-                <Button type="primary" onClick={handleSaveClick} style={{margin:"1rem"}}>Download</Button>
+                <Button type="primary" onClick={handleSaveClick} style={{margin:"1rem auto"}}>Download</Button>
             </div>
         </Col>
     )
