@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/anothercharcheck/static/css/main.70990587.chunk.css",
-    "main.js": "/anothercharcheck/static/js/main.c99c02c1.chunk.js",
-    "main.js.map": "/anothercharcheck/static/js/main.c99c02c1.chunk.js.map",
-    "runtime-main.js": "/anothercharcheck/static/js/runtime-main.7a2f05dc.js",
-    "runtime-main.js.map": "/anothercharcheck/static/js/runtime-main.7a2f05dc.js.map",
+    "main.js": "/anothercharcheck/static/js/main.5197f8c9.chunk.js",
+    "main.js.map": "/anothercharcheck/static/js/main.5197f8c9.chunk.js.map",
+    "runtime-main.js": "/anothercharcheck/static/js/runtime-main.db5f057c.js",
+    "runtime-main.js.map": "/anothercharcheck/static/js/runtime-main.db5f057c.js.map",
     "static/css/2.d103dbc2.chunk.css": "/anothercharcheck/static/css/2.d103dbc2.chunk.css",
-    "static/js/2.6c63bb67.chunk.js": "/anothercharcheck/static/js/2.6c63bb67.chunk.js",
-    "static/js/2.6c63bb67.chunk.js.map": "/anothercharcheck/static/js/2.6c63bb67.chunk.js.map",
-    "static/js/3.902f512b.chunk.js": "/anothercharcheck/static/js/3.902f512b.chunk.js",
-    "static/js/3.902f512b.chunk.js.map": "/anothercharcheck/static/js/3.902f512b.chunk.js.map",
+    "static/js/2.bbdaa15a.chunk.js": "/anothercharcheck/static/js/2.bbdaa15a.chunk.js",
+    "static/js/2.bbdaa15a.chunk.js.map": "/anothercharcheck/static/js/2.bbdaa15a.chunk.js.map",
+    "static/js/3.2f46d4a7.chunk.js": "/anothercharcheck/static/js/3.2f46d4a7.chunk.js",
+    "static/js/3.2f46d4a7.chunk.js.map": "/anothercharcheck/static/js/3.2f46d4a7.chunk.js.map",
     "index.html": "/anothercharcheck/index.html",
     "static/css/2.d103dbc2.chunk.css.map": "/anothercharcheck/static/css/2.d103dbc2.chunk.css.map",
     "static/css/main.70990587.chunk.css.map": "/anothercharcheck/static/css/main.70990587.chunk.css.map",
-    "static/js/2.6c63bb67.chunk.js.LICENSE.txt": "/anothercharcheck/static/js/2.6c63bb67.chunk.js.LICENSE.txt"
+    "static/js/2.bbdaa15a.chunk.js.LICENSE.txt": "/anothercharcheck/static/js/2.bbdaa15a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.7a2f05dc.js",
+    "static/js/runtime-main.db5f057c.js",
     "static/css/2.d103dbc2.chunk.css",
-    "static/js/2.6c63bb67.chunk.js",
+    "static/js/2.bbdaa15a.chunk.js",
     "static/css/main.70990587.chunk.css",
-    "static/js/main.c99c02c1.chunk.js"
+    "static/js/main.5197f8c9.chunk.js"
   ]
 }
