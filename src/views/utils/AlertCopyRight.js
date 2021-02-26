@@ -2,6 +2,11 @@ import React from 'react'
 import { Col, Popover } from "antd";
 import { CopyrightOutlined, ExclamationCircleOutlined } from "@ant-design/icons"
 
+/*-- 
+SPDX-FileCopyrightText: © 2021 Hyun Uk Lee <as0266@naver.com>
+
+SPDX-License-Identifier: MIT
+--*/ 
 
 const content = (
     <b style={{fontSize: "0.8rem"}}>
@@ -18,8 +23,9 @@ const content = (
 
 const content2 = (
     <b style={{fontSize: "0.8rem"}}>
+        최종 업데이트 : 2021.02.25 <br/>
         License : MIT License <br/><br/>
-        Hyun Uk Lee <br/>
+        2021, Hyun Uk Lee <br/>
         as0266@naver.com
     </b>
 )
