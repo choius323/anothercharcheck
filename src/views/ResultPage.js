@@ -8,6 +8,7 @@ import Char5View from './utils/Char5View';
 import CharElementView from './utils/CharElementView';
 import CharASView from './utils/CharASVIew';
 import KorJapLimited from './utils/KorJapLimited';
+import { Helmet } from "react-helmet";
 
 const { Panel } = Collapse;
 
@@ -101,6 +102,9 @@ function ResultPage(props) {
 
     return (
         <div style={{maxWidth: "1000px", textAlign: "center" ,margin: "0 auto"}}>
+            <Helmet>
+                <title>결과 - Another Character</title>
+            </Helmet>
             <Divider style={{fontSize:"1.1rem"}}><b>제목을 눌러 항목을 펼치고 접을 수 있습니다.</b></Divider>
             <div className="checker">
 

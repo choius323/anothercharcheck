@@ -5,7 +5,7 @@ import CharWeaponList from './utils/CharWeaponList';
 import CharCheck from './utils/CharCheck';
 import {withRouter} from "react-router-dom";
 import { useSelector } from 'react-redux';
-
+import { Helmet } from "react-helmet";
  
 /*-- 
 SPDX-FileCopyrightText: © 2021 Hyun Uk Lee <as0266@naver.com>
@@ -31,6 +31,9 @@ function CheckPage(props) {
     return (
             <Container fluid style={{textAlign: "center", margin:"0 auto"}}>
                 <div>
+                    <Helmet>
+                        <title>Another Character</title>
+                    </Helmet>
                     <Table className="checker" responsive striped bordered style={{width: 1280, margin: "0 auto"}}>
                         <thead>
                             <tr>
