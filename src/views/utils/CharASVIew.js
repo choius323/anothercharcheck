@@ -17,7 +17,7 @@ function CharASView({character}) {
     return (
         <Tooltip title={`${chooseLang(language, character.name)}(AS) - ${chooseLang(language, character.sky)}, ${chooseLang(language,character.weapon)}`}>
             <img src={`images/character_base/${character.id}_${character.nonormal ? "1" : "2"}.png`} 
-            style={{width:70}} className={language !== "jap" && array.notAS.includes(character.name) ? "half" : null}/>
+            className={language !== "jap" && array.notAS.includes(character.name) ? "half" : null}/>
         </Tooltip>
     )
 }

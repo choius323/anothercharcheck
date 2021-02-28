@@ -19,7 +19,7 @@ function CharElementView({character, refer}) {
             <Tooltip title={`${chooseLang(language, character.name)}
              - ${chooseLang(language, character.sky)}, ${chooseLang(language,character.weapon)}`}>
                 <img src={`images/character_base/${character.id}_1.png`} 
-                style={{width:70}}/>
+               />
             </Tooltip>
         )
     } else if(character.style < 3) {
@@ -29,7 +29,6 @@ function CharElementView({character, refer}) {
                 <Tooltip title={`${chooseLang(language, character.name)}${character.nonormal ? "(AS)" : ""}
                  - ${chooseLang(language, character.sky)}, ${chooseLang(language,character.weapon)}`}>
                     <img src={`images/character_base/${character.id}_1.png`} 
-                    style={{width:70}}
                     className={ (language !== "jap" && (array.notNS.includes(character.name) || array.japOnly.includes(character.name)) )
                         ? "no" : null}/>
                 </Tooltip> : null}
@@ -37,7 +36,6 @@ function CharElementView({character, refer}) {
                 {refer.another ? 
                 <Tooltip title={`${chooseLang(language, character.name)}(AS) - ${chooseLang(language, character.sky)}, ${chooseLang(language,character.weapon)}`}>
                     <img src={`images/character_base/${character.id}_2.png`}
-                         style={{width:70}}
                          className={ (language !== "jap" && array.notAS.includes(character.name))
                         ? "no" : null} />
                 </Tooltip> : null}
@@ -49,7 +47,6 @@ function CharElementView({character, refer}) {
                 {refer.extra && 
                 <Tooltip title={`${chooseLang(language, character.name)}(ES) - ${chooseLang(language, character.sky)}, ${chooseLang(language,character.weapon)}`}>
                     <img src={`images/character_base/${character.id}_3.png`}
-                        style={{width:70}} 
                         className={ (language !== "jap" && array.notES.includes(character.name))
                         ? "no" : null}/>
                 </Tooltip>

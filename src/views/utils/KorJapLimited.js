@@ -34,13 +34,13 @@ function KorJapLimited() {
         <div>
             <Row>
                 <Col span={24}>
-                    <Divider style={{fontSize:"1.1rem"}}><b>{chooseLang(language,"일본판에만 있는 캐릭터(원판)")}</b></Divider>
+                    <Divider style={{fontSize:"1rem"}}><b>{chooseLang(language,"일본판에만 있는 캐릭터(원판)")}</b></Divider>
                 </Col>
                 <Col span={24}>{array.japOnly.length !== 0 ? renderJap() : chooseLang(language,"없음")}</Col>
             </Row>
             <Row>
                 <Col span={24}>
-                    <Divider style={{fontSize:"1.1rem"}}><b>{chooseLang(language,"글로벌판에만 있는 캐릭터(원판)")}</b></Divider>
+                    <Divider style={{fontSize:"1rem"}}><b>{chooseLang(language,"글로벌판에만 있는 캐릭터(원판)")}</b></Divider>
                 </Col>
                 <Col span={24} style={{marginBottom:"30px"}}>{array.korOnly.length !== 0  ? renderKor() : chooseLang(language,"없음")}</Col>
             </Row>

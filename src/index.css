@@ -57,3 +57,23 @@ code {
 a { 
   text-decoration: none;
 }
+
+img {
+  width: 70px
+}
+.element {
+  width: 40px
+}
+
+@media (max-width: 450px) {
+  img {
+    width: 20%
+  }
+  .element {
+    width: 30px;
+    margin: 0 auto;
+  }
+  h4 b{
+    font-size: 1rem;
+  }
+}

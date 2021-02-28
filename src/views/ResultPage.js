@@ -208,7 +208,7 @@ function ResultPage(props) {
                     {elements.map((element, index) => (
                         <Row key={index} align="middle" style={{marginBottom:"5px"}}>
                             <Col span={4}>
-                                <img style={{width: "40px"}}src={`images/elements/${element}.png`} />
+                                <img className="element" src={`images/elements/${element}.png`} />
                             </Col>
                             <Col span={20} style={{textAlign: "left"}}>
                                 {renderElement(element)}

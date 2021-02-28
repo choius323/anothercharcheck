@@ -48,7 +48,7 @@ function NavBar() {
                     <a href="https://hu-lee.github.io/anotherdungeon/" target="_blank">
                         <Button style={{ height: "60px", lineHeight: "45px",fontSize: "1.4rem", fontWeight: 600}}>
                             <div style={{display: "flex", justifyContent: "center"}}>
-                                <img src="images/dungeon.png" style={{height: "50px", marginRight: "10px"}} />
+                                <img src="images/dungeon.png" style={{width: "50px", height: "50px", marginRight: "10px"}} />
                                 Another Dungeon
                             </div>
                         </Button>
