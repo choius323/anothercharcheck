@@ -8,7 +8,8 @@ SPDX-License-Identifier: MIT
 
 const initialState = {
     linked: window.localStorage.getItem("linked") === "true" || false,
-    info: []
+    info: [],
+    language: window.localStorage.getItem("language") ? window.localStorage.getItem("language") : "kor"
 }
 
 const counter = (state=initialState, action) => {
@@ -20,8 +21,8 @@ const counter = (state=initialState, action) => {
             }
         case types.SET_CHARACTER:
             return {...state, info: action.array}
-        case types.DELETE_CHARACTER:
-            return {...state, info: state.info.filter(a => a.id !== action.id)}
+        case types.SET_LANGUAGE:
+            return {...state, language: action.language}
         default: 
             return state;
     }

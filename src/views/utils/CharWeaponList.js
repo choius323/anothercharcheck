@@ -1,4 +1,3 @@
-import { Tooltip } from 'antd'
 import React from 'react'
 import CharCheck from './CharCheck'
 
@@ -18,9 +17,7 @@ function CharWeaponList({data, weapon}) {
     return (
         <tr>
         <th className="align-middle">
-            <Tooltip title={weapon}>
                 <img style={{width: "100%"}} src={`images/weapons/${weapon}.png`}/>
-            </Tooltip>        
         </th>
         {elements.map((element, index) => (
             <th key={index} className="align-middle">

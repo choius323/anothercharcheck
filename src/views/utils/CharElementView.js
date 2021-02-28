@@ -1,6 +1,8 @@
 import React from 'react';
 import { Tooltip } from "antd";
 import array from "../data/array.json";
+import { chooseLang } from './func';
+import { useSelector } from 'react-redux';
 
 /*-- 
 SPDX-FileCopyrightText: © 2021 Hyun Uk Lee <as0266@naver.com>
@@ -10,9 +12,12 @@ SPDX-License-Identifier: MIT
 
 function CharElementView({character, refer}) {
 
+    const language = useSelector(state => state.language)
+
     if(array.only5Char.indexOf(character.name) >= 0) {
         return (
-            <Tooltip title={`${character.name} - ${character.sky}, ${character.weapon}`}>
+            <Tooltip title={`${chooseLang(language, character.name)}
+             - ${chooseLang(language, character.sky)}, ${chooseLang(language,character.weapon)}`}>
                 <img src={`images/character_base/${character.id}_1.png`} 
                 style={{width:70}}/>
             </Tooltip>
@@ -21,13 +26,14 @@ function CharElementView({character, refer}) {
         return (
             <React.Fragment>
                 {refer.normal === 2 ? 
-                <Tooltip title={`${character.name}${character.nonormal ? "(AS)" : ""} - ${character.sky}, ${character.weapon}`}>
+                <Tooltip title={`${chooseLang(language, character.name)}${character.nonormal ? "(AS)" : ""}
+                 - ${chooseLang(language, character.sky)}, ${chooseLang(language,character.weapon)}`}>
                     <img src={`images/character_base/${character.id}_1.png`} 
                     style={{width:70}}/>
                 </Tooltip> : null}
                 
                 {refer.another ? 
-                <Tooltip title={`${character.name}(AS) - ${character.sky}, ${character.weapon}`}>
+                <Tooltip title={`${chooseLang(language, character.name)}(AS) - ${chooseLang(language, character.sky)}, ${chooseLang(language,character.weapon)}`}>
                     <img src={`images/character_base/${character.id}_2.png`}
                          style={{width:70}} />
                 </Tooltip> : null}
@@ -37,7 +43,7 @@ function CharElementView({character, refer}) {
         return (
             <React.Fragment>
                 {refer.extra && 
-                <Tooltip title={`${character.name}(ES) - ${character.sky}, ${character.weapon}`}>
+                <Tooltip title={`${chooseLang(language, character.name)}(ES) - ${character.sky}, ${character.weapon}`}>
                     <img src={`images/character_base/${character.id}_3.png`}
                         style={{width:70}} />
                 </Tooltip>

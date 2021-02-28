@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState } from 'react'
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-import { Row, Col, Button, Tabs, Mentions, Input} from "antd";
-import { setCharacter, toggleLinked } from '../../_actions/actions';
+import { Col, Button, Tabs, Mentions, Input} from "antd";
+import { setCharacter } from '../../_actions/actions';
 import { useDispatch, useSelector } from 'react-redux';
 
 const { TabPane } = Tabs;
@@ -35,34 +35,33 @@ function DataLoader() {
             if(isValid){
             window.localStorage.setItem("characterinfo", Data)
             dispatch(setCharacter(Data))
-            alert("데이터 로드에 성공하였습니다.")
+            alert("Data Load Success")
             window.location.reload();
         }
         } catch (err) {
-            alert("데이터 로드에 실패하였습니다. 다시 한 번 확인해 주세요. " + err)
+            alert("Data Load Failed." + err)
             return;
         }
     }
     
     return (
-        <Row justify="center">
-            <Col span={20} style={{marginBottom: "30px"}}>
+            <Col xs={24} md={20} style={{marginBottom: "30px"}}>
                 <Tabs type="card" className="resultlabel">
-                    <TabPane tab="데이터 복사" key="1">
+                    <TabPane tab="DATA COPY" key="1">
                         <Mentions style={{ width: '70%', height: "40px", marginRight: "15px" }} placeholder={JSON.stringify(info)} readOnly />
                         <CopyToClipboard text={JSON.stringify(info)}
-                            onCopy={() => alert("체크표 데이터가 복사되었습니다.")}>
+                            onCopy={() => alert("Data copied to clipboard")}>
                             <Button style={{ height: "40px"}}>Copy</Button>
                         </CopyToClipboard>
                         
                     </TabPane>
-                    <TabPane tab="데이터 로드" key="2">
-                        <TextArea style={{ width: '70%', height: "40px", marginRight: "15px" }} value={Data} onChange={onChange} placeholder="가지고 있는 데이터를 입력하세요"/>
+                    <TabPane tab="DATA LOAD" key="2">
+                        <TextArea style={{ width: '70%', height: "40px", marginRight: "15px" }} value={Data} onChange={onChange} 
+                        placeholder="Insert your data"/>
                         <Button style={{ height: "40px"}} onClick={loadData}>Load</Button>
                     </TabPane>
                 </Tabs>
             </Col>
-        </Row>
     )
 }
 

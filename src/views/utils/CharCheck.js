@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Tooltip } from "antd";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setCharacter } from '../../_actions/actions';
 import array from "../data/array.json";
+import { chooseLang } from './func';
 
 /*-- 
 SPDX-FileCopyrightText: © 2021 Hyun Uk Lee <as0266@naver.com>
@@ -16,6 +17,7 @@ function CharCheck({character}) {
 
     const info = JSON.parse(window.localStorage.getItem("characterinfo")) 
                ? JSON.parse(window.localStorage.getItem("characterinfo")) : [];
+    const language = useSelector(state => state.language)
         
     const target = info.find(a => a.id === character.id) 
                  ? info.find(a => a.id === character.id) 
@@ -67,7 +69,7 @@ function CharCheck({character}) {
 
     if(array.only5Char.indexOf(character.name) >= 0) {
         return (
-            <Tooltip title={character.name}>
+            <Tooltip title={chooseLang(language, character.name)}>
                 <img onClick={toggleOnly5Normal} className={Only5Normal === 0 ? "gray" : null}
                 src={`images/character_base/${character.id}_1.png`} 
                 style={{width:70}}/>
@@ -76,7 +78,7 @@ function CharCheck({character}) {
     } else if(character.style < 3) {
         return (
             <React.Fragment>
-                <Tooltip title={`${character.name}${Normal===2 && character.nonormal ? "(AS)" : ""}`}>
+                <Tooltip title={`${chooseLang(language, character.name)}${Normal===2 && character.nonormal ? "(AS)" : ""}`}>
                      <div onClick={toggleNormal} style={{position: "relative", width:70, display: "inline-block"}}>
                         <div className="rank4">{Normal===1 ? "4" : null}</div>
                         <img className={Normal === 0 ? "gray" : null}
@@ -85,7 +87,7 @@ function CharCheck({character}) {
                      </div>
                 </Tooltip>
                 {character.style > 1 ? 
-                <Tooltip title={`${character.name}(AS)`}>
+                <Tooltip title={`${chooseLang(language, character.name)}(AS)`}>
                     <img className={Another ? null : "gray"} onClick={toggleAnother} 
                          src={`images/character_base/${character.id}_2.png`}
                          style={{width:70}} />
@@ -94,7 +96,7 @@ function CharCheck({character}) {
         )
     } else {
         return (
-            <Tooltip title={`${character.name}(ES)`}>
+            <Tooltip title={`${chooseLang(language, character.name)}(ES)`}>
                 <img className={Extra ? null : "gray"} onClick={toggleExtra} 
                     src={`images/character_base/${character.id}_3.png`}
                     style={{width:70}} />

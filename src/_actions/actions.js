@@ -16,7 +16,7 @@ export const setCharacter = (array) => ({
     array
 })
 
-export const deleteCharacter = (id) => ({
-    type: types.DELETE_CHARACTER,
-    id
+export const setLanguage = (language) => ({
+    type: types.SET_LANGUAGE,
+    language
 })

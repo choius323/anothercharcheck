@@ -1,4 +1,4 @@
-import { Col, Divider, Row, Collapse, Tooltip } from 'antd'
+import { Col, Row, Collapse, Tooltip } from 'antd'
 import React, { useEffect } from 'react'
 import { withRouter } from "react-router-dom";
 import { useSelector } from 'react-redux';
@@ -9,6 +9,7 @@ import CharElementView from './utils/CharElementView';
 import CharASView from './utils/CharASVIew';
 import KorJapLimited from './utils/KorJapLimited';
 import { Helmet } from "react-helmet";
+import { chooseLang } from './utils/func';
 
 const { Panel } = Collapse;
 
@@ -27,6 +28,7 @@ function ResultPage(props) {
                ? JSON.parse(window.localStorage.getItem("characterinfo")) : [];
 
     const linked = useSelector(state => state.linked)
+    const language = useSelector(state => state.language)
 
     useEffect(() => {
         if(!linked)
@@ -103,25 +105,25 @@ function ResultPage(props) {
     return (
         <div style={{maxWidth: "1000px", textAlign: "center" ,margin: "0 auto"}}>
             <Helmet>
-                <title>결과 - Another Character</title>
+                <title>Result - Another Character</title>
             </Helmet>
-            <Divider style={{fontSize:"1.1rem"}}><b>제목을 눌러 항목을 펼치고 접을 수 있습니다.</b></Divider>
-            <div className="checker">
+            <b style={{fontSize:"1.1rem"}}>{chooseLang(language,"제목을 눌러 항목을 펼치고 접을 수 있습니다.")}</b>
+            <div className="checker" style={{marginTop: "10px"}}>
 
             <Collapse defaultActiveKey={['1', '2', '3', '4']} style={{fontSize: "1rem", fontWeight: 600}}
              className="resultlabel">
-                <Panel header={`명함도 없는 캐릭터(배포 제외) (${renderNo().length})`} key="1">
+                <Panel header={`${chooseLang(language,"명함도 없는 캐릭터(배포 제외)")} (${renderNo().length})`} key="1">
                     <Row justify="center" style={{marginBottom:"30px"}}>
                         <Col span={24}>{renderNo()}</Col>
                     </Row>
                 </Panel>
-                <Panel header={`4.5성만 있는 캐릭터(배포 제외) (${render45().length})`} key="2">
+                <Panel header={`${chooseLang(language,"4.5성만 있는 캐릭터(배포 제외)")} (${render45().length})`} key="2">
                     <Row justify="center" style={{marginBottom:"30px"}}>
                         <Col span={24}>{render45()}</Col>
                     </Row>
                 </Panel>
-                <Panel header="클래스 체인지(개방) 가능 캐릭터" key="3">
-                    (테일즈 캐릭터는 제외된 결과입니다.)
+                <Panel header={chooseLang(language,"클래스 체인지(개방) 가능 캐릭터")} key="3">
+                    {chooseLang(language,"(테일즈 캐릭터는 제외된 결과입니다.)")}
                     <Row align="middle">                            
                         <Col span={4}>
                             <Tooltip title={`NS : ${renderNS().length}`}>
@@ -149,7 +151,7 @@ function ResultPage(props) {
                         </Col>
                     </Row>
                 </Panel>
-                <Panel header="보유 5성 캐릭터" key="4">
+                <Panel header={chooseLang(language,"보유 5성 캐릭터")} key="4">
                     {elements.map((element, index) => (
                         <Row key={index} align="middle" style={{marginBottom:"5px"}}>
                             <Col span={4}>
@@ -162,7 +164,7 @@ function ResultPage(props) {
                     ))}
                     <Row align="middle">
                         <Col span={4}>
-                            <h4 className="resultlabel"><b>기타</b></h4>
+                            <h4 className="resultlabel"><b>Etc.</b></h4>
                         </Col>
                         <Col span={20} style={{textAlign: "left", marginBottom:"15px"}}>
                             {elements2.map((element) => renderElement(element))}
