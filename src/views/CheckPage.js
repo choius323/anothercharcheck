@@ -55,7 +55,7 @@ function CheckPage(props) {
                             <CharWeaponList key={index} data={data} weapon={weapon} />
                         ))}
                         <tr>
-                        <td className="align-middle"><b>배포</b></td>
+                        <td className="align-middle"><b>Free</b></td>
                         <td className="align-middle" colSpan={5}>
                             {filtered.map((char, index) => <CharCheck key={index} character={char}/>)}
                         </td>

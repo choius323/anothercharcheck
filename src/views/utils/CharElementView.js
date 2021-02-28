@@ -29,13 +29,17 @@ function CharElementView({character, refer}) {
                 <Tooltip title={`${chooseLang(language, character.name)}${character.nonormal ? "(AS)" : ""}
                  - ${chooseLang(language, character.sky)}, ${chooseLang(language,character.weapon)}`}>
                     <img src={`images/character_base/${character.id}_1.png`} 
-                    style={{width:70}}/>
+                    style={{width:70}}
+                    className={ (language !== "jap" && (array.notNS.includes(character.name) || array.japOnly.includes(character.name)) )
+                        ? "no" : null}/>
                 </Tooltip> : null}
                 
                 {refer.another ? 
                 <Tooltip title={`${chooseLang(language, character.name)}(AS) - ${chooseLang(language, character.sky)}, ${chooseLang(language,character.weapon)}`}>
                     <img src={`images/character_base/${character.id}_2.png`}
-                         style={{width:70}} />
+                         style={{width:70}}
+                         className={ (language !== "jap" && array.notAS.includes(character.name))
+                        ? "no" : null} />
                 </Tooltip> : null}
             </React.Fragment>
         )
@@ -43,9 +47,11 @@ function CharElementView({character, refer}) {
         return (
             <React.Fragment>
                 {refer.extra && 
-                <Tooltip title={`${chooseLang(language, character.name)}(ES) - ${character.sky}, ${character.weapon}`}>
+                <Tooltip title={`${chooseLang(language, character.name)}(ES) - ${chooseLang(language, character.sky)}, ${chooseLang(language,character.weapon)}`}>
                     <img src={`images/character_base/${character.id}_3.png`}
-                        style={{width:70}} />
+                        style={{width:70}} 
+                        className={ (language !== "jap" && array.notES.includes(character.name))
+                        ? "no" : null}/>
                 </Tooltip>
                 }
             </React.Fragment>

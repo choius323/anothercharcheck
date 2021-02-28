@@ -18,9 +18,8 @@ function Char5View({character, lower}) {
         <Tooltip title={`${chooseLang(language, character.name)}${lower === "3" ? "(ES)" : ""} - ${chooseLang(language, character.sky)}, ${chooseLang(language,character.weapon)}`}>
             <img src={`images/character_base/${character.id}_${lower ? lower : "1"}.png`} 
             style={{width:70}} 
-            className={array.japOnly.includes(character.name) 
-                       || array.notNS.includes(character.name)
-                       || (lower === "3" && array.notES.includes(character.name) ) 
+            className={ (lower === "1" && language !== "jap" && array.notNS.includes(character.name) )
+                       || (lower === "3" && language !== "jap" && array.notES.includes(character.name) ) 
                        ? "half" : null}/>
         </Tooltip>
     )

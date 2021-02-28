@@ -86,16 +86,19 @@ function CharCheck({character}) {
                         style={{width:70}}/>
                      </div>
                 </Tooltip>
-                {character.style > 1 ? 
+                {character.style > 1 && (language==="jap" || (language !== "jap" && 
+                !array.notAS.includes(character.name)) ) && 
                 <Tooltip title={`${chooseLang(language, character.name)}(AS)`}>
                     <img className={Another ? null : "gray"} onClick={toggleAnother} 
                          src={`images/character_base/${character.id}_2.png`}
                          style={{width:70}} />
-                </Tooltip> : null}
+                </Tooltip>}
             </React.Fragment>
         )
     } else {
         return (
+            (language==="jap" || (language !== "jap" && 
+            !array.notES.includes(character.name)) ) && 
             <Tooltip title={`${chooseLang(language, character.name)}(ES)`}>
                 <img className={Extra ? null : "gray"} onClick={toggleExtra} 
                     src={`images/character_base/${character.id}_3.png`}

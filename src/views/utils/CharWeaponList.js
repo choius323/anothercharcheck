@@ -1,5 +1,7 @@
 import React from 'react'
 import CharCheck from './CharCheck'
+import array from "../data/array.json"
+import { useSelector } from 'react-redux'
 
 /*-- 
 SPDX-FileCopyrightText: © 2021 Hyun Uk Lee <as0266@naver.com>
@@ -12,7 +14,17 @@ const elements2 = [ "음", "뇌", "정"]
 
 function CharWeaponList({data, weapon}) {
     
-    const filtered = data.filter(item => item.weapon === weapon && !item.free)
+    const language = useSelector(state => state.language)
+    let filtered;
+
+    if(language === "jap") {
+        filtered = data.filter(item => item.weapon === weapon && !item.free
+             && !array.korOnly.includes(item.name))
+    } else {
+        filtered = data.filter(item => item.weapon === weapon && !item.free
+             && !array.japOnly.includes(item.name))
+    }
+    
 
     return (
         <tr>

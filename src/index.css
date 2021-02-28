@@ -17,6 +17,7 @@ code {
   -moz-filter: grayscale(100%); 
   -o-filter: grayscale(100%); 
   filter: grayscale(100%);
+  opacity: 0.4;
 }
 
 .checker {
@@ -27,9 +28,13 @@ code {
   opacity: 0.4;
 }
 
+.no {
+  display: none;
+}
+
 .rank4 {
   position: absolute;
-  font-size: 2rem;
+  font-size: 1.4rem;
   left: 5px;
   background-color: yellow;
   -webkit-touch-callout: none;
