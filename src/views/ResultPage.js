@@ -54,38 +54,34 @@ function ResultPage(props) {
             });
     }
 
-    const renderNoGacha = () => {
+    const renderNo = (isFree) => {
         const infoIDs = info.map(a => a.id%300)
-        const dataNo = parsedData.filter(b => !(infoIDs.includes(b.id%300)) && b.id < 300 && !b.free)
+        let dataNo;
+        if(isFree)
+            dataNo = parsedData.filter(b => !(infoIDs.includes(b.id%300)) && b.id < 300 && b.free)
+        else 
+            dataNo = parsedData.filter(b => !(infoIDs.includes(b.id%300)) && b.id < 300 && !b.free)
         sortArray(dataNo);
         return dataNo.map((item, index) => (
             <Char5View key={index} character={item} />
         ))
     }
     
-    const renderNoFree = () => {
-        const infoIDs = info.map(a => a.id%300)
-        const dataNo = parsedData.filter(b => !(infoIDs.includes(b.id%300)) && b.id < 300 && b.free)
-        sortArray(dataNo);
-        return dataNo.map((item, index) => (
-            <Char5View key={index} character={item} />
-        ))
-    } 
-
-    const render45Gacha = () => {
-        const info45 = info.filter(a => a.normal === 1 && !a.another && !a.extra)
+    const render45 = (isFree) => {
+        const info45 = info.filter(a => {
+            if(a.normal !== 1)
+                return false;
+            if(info.find(b => b.id === a.id+300))
+                return !a.another && !info.find(b => b.id === a.id+300).extra
+            else
+                return !a.another
+        })
         const data45 = info45.map(b => parsedData.find(item => item.id === b.id))
-        const data45parsed = data45.filter(b => !b.free)
-        sortArray(data45parsed);
-        return data45parsed.map((item, index) => (
-            <Char5View key={index} character={item} lower="0" />
-        ))
-    }
-
-    const render45Free = () => {
-        const info45 = info.filter(a => a.normal === 1 && !a.another && !a.extra)
-        const data45 = info45.map(b => parsedData.find(item => item.id === b.id))
-        const data45parsed = data45.filter(b => b.free && !array.only5Char.includes(b.name))
+        let data45parsed;
+        if(isFree)
+            data45parsed = data45.filter(b => b.free && !array.only5Char.includes(b.name))
+        else
+            data45parsed = data45.filter(b => !b.free)
         sortArray(data45parsed);
         return data45parsed.map((item, index) => (
             <Char5View key={index} character={item} lower="0" />
@@ -155,22 +151,22 @@ function ResultPage(props) {
 
             <Collapse defaultActiveKey={['1', '2', '3', '4']} style={{fontSize: "1rem", fontWeight: 600}}
              className="resultlabel">
-                <Panel header={`${chooseLang(language,"명함도 없는 캐릭터")} (${renderNoGacha().length} + ${renderNoFree().length})`} key="1">
+                <Panel header={`${chooseLang(language,"명함도 없는 캐릭터")} (${renderNo(false).length} + ${renderNo(true).length})`} key="1">
                     <Row justify="center" align="middle" style={{marginBottom:"30px"}}>
                         <Col span={4}><b>Not Free</b></Col>
-                        <Col span={20}>{renderNoGacha()}</Col>
+                        <Col span={20}>{renderNo(false)}</Col>
                         <Divider style={{margin: "15px auto"}}/>
                         <Col span={4}><b>Free</b></Col>
-                        <Col span={20}>{renderNoFree()}</Col>
+                        <Col span={20}>{renderNo(true)}</Col>
                     </Row>
                 </Panel>
-                <Panel header={`${chooseLang(language,"4.5성만 있는 캐릭터")} (${render45Gacha().length} + ${render45Free().length})`} key="2">
+                <Panel header={`${chooseLang(language,"4.5성만 있는 캐릭터")} (${render45(false).length} + ${render45(true).length})`} key="2">
                     <Row justify="center" align="middle" style={{marginBottom:"30px"}}>
                     <Col span={4}><b>Not Free</b></Col>
-                        <Col span={20}>{render45Gacha()}</Col>
+                        <Col span={20}>{render45(false)}</Col>
                         <Divider style={{margin: "15px auto"}}/>
                         <Col span={4}><b>Free</b></Col>
-                        <Col span={20}>{render45Free()}</Col>
+                        <Col span={20}>{render45(true)}</Col>
                     </Row>
                 </Panel>
                 <Panel header={chooseLang(language,"클래스 체인지(개방) 가능 캐릭터")} key="3">
