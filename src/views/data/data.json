@@ -464,7 +464,7 @@
         "sky": "천"
     },{
         "id": 64,
-        "style": 1,
+        "style": 2,
         "name": "츠바메",
         "element": "땅",
         "weapon": "권갑", 
@@ -653,5 +653,12 @@
         "element": "바람",
         "weapon": "지팡이",
         "sky": "천"
+    },{
+        "id": 89,
+        "style": 1,
+        "name": "프라이",
+        "element": "불",
+        "weapon": "망치",
+        "sky": "명"
     }
 ]
