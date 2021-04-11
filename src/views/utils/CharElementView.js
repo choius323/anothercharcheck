@@ -19,7 +19,7 @@ function CharElementView({character, refer}) {
             <Tooltip title={`${chooseLang(language, character.name)}
              - ${chooseLang(language, character.sky)}, ${chooseLang(language,character.weapon)}`}>
                 <img src={`images/character_base/${character.id}_1.png`} 
-               />
+                className={`${chooseLang("eng", character.element).toLowerCase()} check`}/>
             </Tooltip>
         )
     } else if(character.style < 3) {
@@ -30,14 +30,16 @@ function CharElementView({character, refer}) {
                  - ${chooseLang(language, character.sky)}, ${chooseLang(language,character.weapon)}`}>
                     <img src={`images/character_base/${character.id}_1.png`} 
                     className={ (language !== "jap" && (array.notNS.includes(character.name) || array.japOnly.includes(character.name)) )
-                        ? "no" : null}/>
+                        ? `no ${chooseLang("eng", character.element).toLowerCase()} check` 
+                        : `${chooseLang("eng", character.element).toLowerCase()} check`}/>
                 </Tooltip> : null}
                 
                 {refer.another ? 
                 <Tooltip title={`${chooseLang(language, character.name)}(AS) - ${chooseLang(language, character.sky)}, ${chooseLang(language,character.weapon)}`}>
                     <img src={`images/character_base/${character.id}_2.png`}
                          className={ (language !== "jap" && array.notAS.includes(character.name))
-                        ? "no" : null} />
+                         ? `no ${chooseLang("eng", character.element).toLowerCase()} check` 
+                         : `${chooseLang("eng", character.element).toLowerCase()} check`} />
                 </Tooltip> : null}
             </React.Fragment>
         )
@@ -48,7 +50,8 @@ function CharElementView({character, refer}) {
                 <Tooltip title={`${chooseLang(language, character.name)}(ES) - ${chooseLang(language, character.sky)}, ${chooseLang(language,character.weapon)}`}>
                     <img src={`images/character_base/${character.id}_3.png`}
                         className={ (language !== "jap" && array.notES.includes(character.name))
-                        ? "no" : null}/>
+                        ? `no ${chooseLang("eng", character.element).toLowerCase()} check` 
+                        : `${chooseLang("eng", character.element).toLowerCase()} check`}/>
                 </Tooltip>
                 }
             </React.Fragment>

@@ -397,6 +397,7 @@
     {"kor": "찌르기", "jap": "突", "eng": "Pierce"},
     {"kor": "베기", "jap": "斬", "eng": "Slash"},
     {"kor": "타격", "jap": "打", "eng": "Blunt"},
+    {"kor": "없음", "jap": "無", "eng": "None"},
     {"kor": "번개(흡수)", "jap": "雷 吸収", "eng": "Absorbs Thnuder"},
     {"kor": "마법(흡수)", "jap": "魔 吸収", "eng": "Absorbs Magic"},
     {"kor": "베기(무효)", "jap": "斬 無効", "eng": "Nulls Slash"},

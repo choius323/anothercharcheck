@@ -10,7 +10,7 @@ SPDX-License-Identifier: MIT
 --*/ 
 
 const elements = ["불", "물", "바람", "땅"]
-const elements2 = [ "음", "뇌", "정"]
+const elements2 = [ "그림자", "번개", "결정", "없음"]
 
 function CharWeaponList({data, weapon}) {
     

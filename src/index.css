@@ -65,9 +65,46 @@ img {
   width: 40px
 }
 
+.check {
+  width: 66px;
+  margin: 2px 2px 2px 2px;
+  border-radius: 5px;
+  /* border: 2px solid lightgray; */
+}
+
+.fire {
+  border: 2px solid #FF0000;
+}
+
+.water {
+  border: 2px solid #00A5FF;
+}
+
+.wind {
+  border: 2px solid green;
+}
+
+.earth {
+  border: 2px solid #9B673C;
+}
+
+.shade {
+  border: 2px solid #7033AD;
+}
+.thunder {
+  border: 2px solid #FFCC00;
+}
+
+.crystal {
+  border: 2px solid lightgray;
+}
+.none {
+  border: 2px solid black;
+}
+
 @media (max-width: 450px) {
-  img {
-    width: 20%
+  .check {
+    width: 18%
   }
   .element {
     width: 30px;

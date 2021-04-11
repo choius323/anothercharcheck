@@ -20,7 +20,10 @@ SPDX-License-Identifier: MIT
 --*/ 
 
 const elements = ["불", "물", "바람", "땅"]
-const elements2 = [ "음", "뇌", "정"]
+const elements2 = [ "그림자", "번개", "결정", "없음"]
+const elementSort = {
+    '불': 1, '물': 2, '바람': 3, '땅': 4, '그림자': 5, '번개': 6, '결정': 7, '없음': 8, 
+}
 
 function ResultPage(props) {
 
@@ -52,6 +55,9 @@ function ResultPage(props) {
                 return (chooseLang(language, a.name) > chooseLang(language, b.name))
                  - (chooseLang(language, b.name) > chooseLang(language, a.name));
             });
+        array.sort(function(a, b) { // 속성 정렬
+            return elementSort[a.element] - elementSort[b.element]
+        });
     }
 
     const renderNo = (isFree) => {
@@ -153,70 +159,70 @@ function ResultPage(props) {
              className="resultlabel">
                 <Panel header={`${chooseLang(language,"명함도 없는 캐릭터")} (${renderNo(false).length} + ${renderNo(true).length})`} key="1">
                     <Row justify="center" align="middle" style={{marginBottom:"30px"}}>
-                        <Col span={4}><b>Not Free</b></Col>
-                        <Col span={20}>{renderNo(false)}</Col>
+                        <Col xs={24} sm={4}><b>Not Free</b></Col>
+                        <Col xs={23} sm={20}>{renderNo(false)}</Col>
                         <Divider style={{margin: "15px auto"}}/>
-                        <Col span={4}><b>Free</b></Col>
-                        <Col span={20}>{renderNo(true)}</Col>
+                        <Col xs={24} sm={4}><b>Free</b></Col>
+                        <Col xs={23} sm={20}>{renderNo(true)}</Col>
                     </Row>
                 </Panel>
                 <Panel header={`${chooseLang(language,"4.5성만 있는 캐릭터")} (${render45(false).length} + ${render45(true).length})`} key="2">
-                    <Row justify="center" align="middle" style={{marginBottom:"30px"}}>
-                    <Col span={4}><b>Not Free</b></Col>
-                        <Col span={20}>{render45(false)}</Col>
+                    <Row justify="center" align="middle" justify="center" style={{marginBottom:"30px"}}>
+                        <Col xs={24} sm={4}><b>Not Free</b></Col>
+                        <Col xs={23} sm={20}>{render45(false)}</Col>
                         <Divider style={{margin: "15px auto"}}/>
-                        <Col span={4}><b>Free</b></Col>
-                        <Col span={20}>{render45(true)}</Col>
+                        <Col xs={24} sm={4}><b>Free</b></Col>
+                        <Col xs={23} sm={20}>{render45(true)}</Col>
                     </Row>
                 </Panel>
                 <Panel header={chooseLang(language,"클래스 체인지(개방) 가능 캐릭터")} key="3">
                     {chooseLang(language,"(테일즈 캐릭터는 제외된 결과입니다.)")}
-                    <Row align="middle" style={{marginTop: "5px"}}>                            
-                        <Col span={4}>
+                    <Row align="middle" justify="center" style={{marginTop: "5px"}}>                            
+                        <Col xs={24} sm={4}>
                             <Tooltip title={`NS : ${renderNS().length}`}>
                                 <h4><b>NS</b></h4>
                             </Tooltip>
                         </Col>
-                        <Col span={20} style={{textAlign: "left", marginBottom:"5px"}}>
+                        <Col xs={23} sm={20} style={{textAlign: "left", marginBottom:"5px"}}>
                             {renderNS()}
                         </Col>
                         <Divider style={{margin: "15px auto"}}/>
-                        <Col span={4}>
+                        <Col xs={24} sm={4}>
                             <Tooltip title={`AS : ${renderAS().length}`}>
                                 <h4><b>AS</b></h4>
                             </Tooltip>
                         </Col>
-                        <Col span={20} style={{textAlign: "left", marginBottom:"5px"}}>
+                        <Col xs={23} sm={20} style={{textAlign: "left", marginBottom:"5px"}}>
                             {renderAS()}
                         </Col>
                         <Divider style={{margin: "15px auto"}}/>
-                        <Col span={4}>
+                        <Col xs={24} sm={4}>
                             <Tooltip title={`ES : ${renderES().length}`}>
                                 <h4><b>ES</b></h4>
                             </Tooltip>
                         </Col>
-                        <Col span={20} style={{textAlign: "left", marginBottom:"5px"}}>
+                        <Col xs={23} sm={20} style={{textAlign: "left", marginBottom:"5px"}}>
                             {renderES()}
                         </Col>
                     </Row>
                 </Panel>
                 <Panel header={chooseLang(language,"보유 5성 캐릭터")} key="4">
                     {elements.map((element, index) => (
-                        <Row key={index} align="middle" style={{marginBottom:"5px"}}>
-                            <Col span={4}>
+                        <Row key={index} align="middle" justify="center" style={{marginBottom:"5px"}}>
+                            <Col xs={24} sm={4}>
                                 <img className="element" src={`images/elements/${element}.png`} />
                             </Col>
-                            <Col span={20} style={{textAlign: "left"}}>
+                            <Col xs={23} sm={20} style={{textAlign: "left"}}>
                                 {renderElement(element)}
                             </Col>
                             <Divider style={{margin: "15px auto"}}/>
                         </Row>
                     ))}
-                    <Row align="middle">
-                        <Col span={4}>
+                    <Row align="middle" justify="center">
+                        <Col xs={24} sm={4}>
                             <h4 className="resultlabel"><b>Etc.</b></h4>
                         </Col>
-                        <Col span={20} style={{textAlign: "left", marginBottom:"15px"}}>
+                        <Col xs={23} sm={20} style={{textAlign: "left", marginBottom:"15px"}}>
                             {elements2.map((element) => renderElement(element))}
                         </Col>
                     </Row>

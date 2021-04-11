@@ -18,7 +18,7 @@
         "id": 302,
         "style": 3,
         "name": "메리나",
-        "element": "뇌",
+        "element": "번개",
         "weapon": "권갑", 
         "sky": "명"
     },{
@@ -120,7 +120,7 @@
         "id": 16,
         "style": 2,
         "name": "클라르테",
-        "element": "정",
+        "element": "결정",
         "weapon": "지팡이",
         "free": true, 
         "sky": "명" 
@@ -194,7 +194,7 @@
         "id": 26,
         "style": 2,
         "name": "틸릴",
-        "element": "음",
+        "element": "그림자",
         "weapon": "검", 
         "sky": "명"
     },{
@@ -252,7 +252,7 @@
         "id": 34,
         "style": 1,
         "name": "빅트",
-        "element": "뇌",
+        "element": "번개",
         "weapon": "도", 
         "sky": "명"
     },{
@@ -266,7 +266,7 @@
         "id": 36,
         "style": 1,
         "name": "멜리사",
-        "element": "정",
+        "element": "결정",
         "weapon": "도", 
         "sky": "명"
     },{
@@ -374,14 +374,14 @@
         "id": 51,
         "style": 1,
         "name": "미르샤",
-        "element": "음",
+        "element": "그림자",
         "weapon": "창", 
         "sky": "명"
     },{
         "id": 52,
         "style": 1,
         "name": "이웨라",
-        "element": "정",
+        "element": "결정",
         "weapon": "창", 
         "sky": "천"
     },{
@@ -423,7 +423,7 @@
         "id": 58,
         "style": 1,
         "name": "미스트레아",
-        "element": "정",
+        "element": "결정",
         "weapon": "활", 
         "sky": "명"
     },{
@@ -522,7 +522,7 @@
         "id": 72,
         "style": 1,
         "name": "짚돌이",
-        "element": "정",
+        "element": "없음",
         "weapon": "권갑",
         "free": true, 
         "sky": "천"
@@ -530,7 +530,7 @@
         "id": 73,
         "style": 1,
         "name": "스컬",
-        "element": "뇌",
+        "element": "번개",
         "weapon": "망치",
         "free": true, 
         "sky": "천"
@@ -610,7 +610,7 @@
         "id": 83,
         "style": 1,
         "name": "알테나",
-        "element": "정",
+        "element": "없음",
         "weapon": "활",
         "free": true, 
         "sky": "명"

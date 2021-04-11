@@ -31,7 +31,6 @@ function DataLoader() {
         try {
             const Parsed = JSON.parse(Data)
             const isValid = typeof Parsed === 'object'
-            console.log(isValid)
             if(isValid){
             window.localStorage.setItem("characterinfo", Data)
             dispatch(setCharacter(Data))

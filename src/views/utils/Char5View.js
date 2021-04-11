@@ -19,7 +19,8 @@ function Char5View({character, lower}) {
             <img src={`images/character_base/${character.id}_${lower ? lower : "1"}.png`} 
             className={ (lower === "1" && language !== "jap" && array.notNS.includes(character.name) )
                        || (lower === "3" && language !== "jap" && array.notES.includes(character.name) ) 
-                       ? "half" : null}/>
+                       ? `half ${chooseLang("eng", character.element).toLowerCase()} check` 
+                       : `${chooseLang("eng", character.element).toLowerCase()} check`}/>
         </Tooltip>
     )
 }
