@@ -15,9 +15,15 @@ function CharCheck({character}) {
     
     const dispatch = useDispatch();
 
-    const info = JSON.parse(window.localStorage.getItem("characterinfo")) 
-               ? JSON.parse(window.localStorage.getItem("characterinfo")) : [];
     const language = useSelector(state => state.language)
+
+    let info = JSON.parse(window.localStorage.getItem("characterinfo")) 
+               ? JSON.parse(window.localStorage.getItem("characterinfo")) : [];
+
+    info.forEach(a => {
+        if (array.notNS_ID.includes(a.id) && language !== "jap" && a.normal===2)
+            a.normal = 1
+    })
         
     const target = info.find(a => a.id === character.id) 
                  ? info.find(a => a.id === character.id) 
@@ -48,6 +54,10 @@ function CharCheck({character}) {
         dispatch(setCharacter(newArray))
     }
     const toggleNormal = () => {
+        if(Normal === 1 && language !== "jap" && array.notNS.includes(character.name)) {
+            setNormal(0)
+            return
+        }
         setNormal((Normal+1)%3)
     }
 
@@ -65,7 +75,9 @@ function CharCheck({character}) {
 
     useEffect(() => {
         saveCharacter();
-    }, [Normal, Only5Normal, Extra, Another])
+        if(Normal === 2 && language !== "jap" && array.notNS.includes(character.name))
+            setNormal(1)
+    }, [Normal, Only5Normal, Extra, Another, language])
 
     if(array.only5Char.indexOf(character.name) >= 0) {
         return (

@@ -27,12 +27,18 @@ const elementSort = {
 
 function ResultPage(props) {
 
-    const info = JSON.parse(window.localStorage.getItem("characterinfo")) 
-               ? JSON.parse(window.localStorage.getItem("characterinfo")) : [];
 
     const linked = useSelector(state => state.linked)
     const language = useSelector(state => state.language)
 
+    let info = JSON.parse(window.localStorage.getItem("characterinfo")) 
+               ? JSON.parse(window.localStorage.getItem("characterinfo")) : [];
+
+    info.forEach(a => {
+        if (array.notNS_ID.includes(a.id) && language !== "jap" && a.normal===2)
+            a.normal = 1
+    })
+    
     let parsedData;
     if(language === "jap") {
         parsedData = data.filter(a => !array.korOnly.includes(a.name))
