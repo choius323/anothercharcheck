@@ -2,14 +2,13 @@ import { Col, Row, Collapse, Tooltip, Divider } from 'antd'
 import React, { useEffect } from 'react'
 import { withRouter } from "react-router-dom";
 import { useSelector } from 'react-redux';
-import array from "./data/array.json";
-import data from './data/data.json';
-import Char5View from './utils/Char5View';
-import CharElementView from './utils/CharElementView';
-import CharASView from './utils/CharASVIew';
+import array from "../data/array.json";
+import data from '../data/data.json';
+import CharResult from './Components/ResultPage/CharResult';
 import KorJapLimited from './utils/KorJapLimited';
 import { Helmet } from "react-helmet";
 import { chooseLang } from './utils/func';
+import ActionButton from 'antd/lib/modal/ActionButton';
 
 const { Panel } = Collapse;
 
@@ -37,9 +36,16 @@ function ResultPage(props) {
     info.forEach(a => {
         if (array.notNS_ID.includes(a.id) && language !== "jap" && a.normal===2)
             a.normal = 1
+        if (array.japOnly_ID.includes(a.id) && language !== "jap"){
+            a.normal = 0
+            a.another = false;
+            a.extra = false
+        }
+            
     })
     
     let parsedData;
+
     if(language === "jap") {
         parsedData = data.filter(a => !array.korOnly.includes(a.name))
     } else {
@@ -49,7 +55,8 @@ function ResultPage(props) {
     useEffect(() => {
         if(!linked)
             props.history.push("/")
-    }, [])
+        
+    }, [language])
 
     const sortArray = (array) => {
         if(language === "kor")
@@ -75,7 +82,7 @@ function ResultPage(props) {
             dataNo = parsedData.filter(b => !(infoIDs.includes(b.id%300)) && b.id < 300 && !b.free)
         sortArray(dataNo);
         return dataNo.map((item, index) => (
-            <Char5View key={index} character={item} />
+            <CharResult key={index} character={item} lower={1}/>
         ))
     }
     
@@ -91,21 +98,27 @@ function ResultPage(props) {
         const data45 = info45.map(b => parsedData.find(item => item.id === b.id))
         let data45parsed;
         if(isFree)
-            data45parsed = data45.filter(b => b.free && !array.only5Char.includes(b.name))
+            data45parsed = data45.filter(b => b && b.free && !array.only5Char.includes(b.name))
         else
-            data45parsed = data45.filter(b => !b.free)
+            data45parsed = data45.filter(b => b && !b.free)
         sortArray(data45parsed);
         return data45parsed.map((item, index) => (
-            <Char5View key={index} character={item} lower="0" />
+            <CharResult key={index} character={item} lower={0} />
         ))
     }
 
     const renderElement = (element) => {
-        const dataElement = info.map(item => data.find(a => a.id === item.id))
-            .filter(b => b.element === element)
+        const dataElement = info.map(item => ({
+            ...parsedData.find(a => a.id === item.id), ...item
+        })).filter(b => b.element === element)
         sortArray(dataElement);
         return dataElement.map((c, index) => (
-            <CharElementView key={index} character={c} refer={info.find(i => i.id === c.id)} />
+            <React.Fragment key={index}>
+                {c.normal === 2 && <CharResult character={c} lower={c.nonormal ? 2 : 1} elementSort={true}/>}
+                {c.normal === 1 && array.only5Char.includes(c.name) && <CharResult character={c} lower={1} elementSort={true}/>}
+                {c.another && <CharResult character={c} lower={2} elementSort={true}/>}
+                {c.extra && <CharResult character={c} lower={3} elementSort={true}/>}
+            </React.Fragment>
         ))
     }
 
@@ -114,7 +127,8 @@ function ResultPage(props) {
             if(a.normal === 2)
                 return false;
             if(info.find(b => b.id === a.id%300))
-                return info.find(b => b.id === a.id%300).normal !== 2
+                return info.find(b => b.id === a.id%300).normal === 1 
+                    || (info.find(b => b.id === a.id%300).normal === 1 && info.find(b => b.id === a.id%300).another)
             else 
                 return true
         })
@@ -122,7 +136,7 @@ function ResultPage(props) {
         const dataNSFiltered = dataNS.filter(c => !array.only5Char.includes(c.name) && c.style <= 2 && !c.nonormal)
         sortArray(dataNSFiltered);
         return dataNSFiltered.map((item, index) => (
-            <Char5View key={index} character={item} lower="1"/>
+            <CharResult key={index} character={item} lower={1}/>
         ))
     } 
 
@@ -140,7 +154,7 @@ function ResultPage(props) {
             || (c.style === 1 && c.nonormal && info.find(d => d.id === c.id).normal !== 2))
         sortArray(dataASFiltered);
         return dataASFiltered.map((item, index) => (
-            <CharASView key={index} character={item} />
+            <CharResult key={index} character={item} lower={2}/>
         ))
     }
     
@@ -149,7 +163,7 @@ function ResultPage(props) {
         const dataES = data.filter(b => b.id>300 && !infoES.includes(b.id) && infoES.includes(b.id%300))
         sortArray(dataES);
         return dataES.map((item, index) => (
-            <Char5View key={index} character={item} lower="3"/>
+            <CharResult key={index} character={item} lower={3}/>
         ))
     } 
 

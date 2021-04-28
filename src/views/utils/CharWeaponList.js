@@ -1,6 +1,6 @@
 import React from 'react'
 import CharCheck from './CharCheck'
-import array from "../data/array.json"
+import array from "../../data/array.json"
 import { useSelector } from 'react-redux'
 
 /*-- 

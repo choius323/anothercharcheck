@@ -7,7 +7,7 @@ import { toggleLinked } from '../_actions/actions';
 
 import Downloader from './utils/Downloader';
 import DataLoader from './utils/DataLoader';
-import AlertCopyRight from './utils/AlertCopyRight';
+import AlertCopyRight from './Components/NavBar/AlertCopyRight';
 import Language from './utils/Language';
 
 /*-- 

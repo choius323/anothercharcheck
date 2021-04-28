@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Tooltip } from "antd";
 import { useDispatch, useSelector } from 'react-redux';
 import { setCharacter } from '../../_actions/actions';
-import array from "../data/array.json";
+import array from "../../data/array.json";
 import { chooseLang } from './func';
 
 /*-- 
