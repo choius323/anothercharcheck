@@ -30,11 +30,11 @@ function CheckPage(props) {
 
     return (
             <div style={{maxWidth: 1300, textAlign: "center", margin:"0 auto"}}>
-                <div className="checker">
+                <div >
                     <Helmet>
                         <title>Another Character</title>
                     </Helmet>
-                    <Table responsive striped bordered style={{width: 1280, margin:"0 auto"}}>
+                    <Table className="checker" responsive striped bordered style={{width: 1280, margin:"0 auto"}}>
                         <thead>
                             <tr>
                             <th style={{width: 70}}></th>
