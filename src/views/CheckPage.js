@@ -29,12 +29,12 @@ function CheckPage(props) {
     }, [])
 
     return (
-            <Container fluid style={{textAlign: "center", margin:"0 auto"}}>
-                <div>
+            <div style={{maxWidth: 1300, textAlign: "center", margin:"0 auto"}}>
+                <div className="checker">
                     <Helmet>
                         <title>Another Character</title>
                     </Helmet>
-                    <Table className="checker" responsive striped bordered style={{width: 1280, margin: "0 auto"}}>
+                    <Table responsive striped bordered style={{width: 1280, margin:"0 auto"}}>
                         <thead>
                             <tr>
                             <th style={{width: 70}}></th>
@@ -63,7 +63,7 @@ function CheckPage(props) {
                         </tbody>
                     </Table>
                 </div>
-            </Container>
+            </div>
     )
 }
 

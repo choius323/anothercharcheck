@@ -23,6 +23,13 @@ function CharCheck({character}) {
     info.forEach(a => {
         if (array.notNS_ID.includes(a.id) && language !== "jap" && a.normal===2)
             a.normal = 1
+        if (array.japOnly_ID.includes(a.id) && language !== "jap"){
+            a.normal = 0
+            a.another = false;
+            a.extra = false
+        }
+        if (array.notAS_ID.includes(a.id) && language !== "jap" && a.another)
+            a.another = false;   
     })
         
     const target = info.find(a => a.id === character.id) 

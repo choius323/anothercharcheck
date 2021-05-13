@@ -41,7 +41,8 @@ function ResultPage(props) {
             a.another = false;
             a.extra = false
         }
-            
+        if (array.notAS_ID.includes(a.id) && language !== "jap" && a.another)
+            a.another = false;   
     })
     
     let parsedData;
@@ -114,10 +115,10 @@ function ResultPage(props) {
         sortArray(dataElement);
         return dataElement.map((c, index) => (
             <React.Fragment key={index}>
-                {c.normal === 2 && <CharResult character={c} lower={c.nonormal ? 2 : 1} elementSort={true}/>}
-                {c.normal === 1 && array.only5Char.includes(c.name) && <CharResult character={c} lower={1} elementSort={true}/>}
-                {c.another && <CharResult character={c} lower={2} elementSort={true}/>}
-                {c.extra && <CharResult character={c} lower={3} elementSort={true}/>}
+                {c.normal === 2 ? <CharResult character={c} lower={c.nonormal ? 2 : 1} elementSort={true}/> : null}
+                {c.normal === 1 ? array.only5Char.includes(c.name) && <CharResult character={c} lower={1} elementSort={true}/> : null}
+                {c.another ? <CharResult character={c} lower={2} elementSort={true}/> : null}
+                {c.extra ? <CharResult character={c} lower={3} elementSort={true}/> : null}
             </React.Fragment>
         ))
     }

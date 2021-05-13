@@ -2,6 +2,7 @@ import { Button, Col } from 'antd'
 import React from 'react'
 import domtoimage from 'dom-to-image';
 import html2canvas from 'html2canvas';
+import { isIOS, isIOS13, isMacOs, isSafari } from 'react-device-detect';
 
 /*-- 
 SPDX-FileCopyrightText: © 2021 Hyun Uk Lee <as0266@naver.com>
@@ -12,8 +13,8 @@ SPDX-License-Identifier: MIT
 function Downloader({realLink}) {
 
     const handleSaveClick = () => {
-        const varUA = navigator.userAgent.toLowerCase();
-        if ( varUA.indexOf("iphone") > -1||varUA.indexOf("ipad") > -1||varUA.indexOf("ipod") > -1 ) {
+        if ( isIOS || isIOS13 || isSafari || isMacOs) {
+            alert('alternative Downloader for iOS & Safari')
             html2canvas(document.querySelector('.checker'), {
                 onrendered: function (canvas) {
                     let a = document.createElement('a');
