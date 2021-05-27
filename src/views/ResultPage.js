@@ -129,7 +129,7 @@ function ResultPage(props) {
                 return false;
             if(info.find(b => b.id === a.id%300))
                 return info.find(b => b.id === a.id%300).normal === 1 
-                    || (info.find(b => b.id === a.id%300).normal === 1 && info.find(b => b.id === a.id%300).another)
+                    || (info.find(b => b.id === a.id%300).normal === 0 && info.find(b => b.id === a.id%300).another)
             else 
                 return true
         })
