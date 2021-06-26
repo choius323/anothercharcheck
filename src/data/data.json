@@ -243,7 +243,7 @@
         "sky": "천"
     },{
         "id": 34,
-        "style": 1,
+        "style": 2,
         "name": "빅트",
         "element": "번개",
         "weapon": "도", 
@@ -674,6 +674,21 @@
         "name": "가람바렐",
         "element": "바람",
         "weapon": "창",
+        "sky": "천"
+    },{
+        "id": 93,
+        "style": 1,
+        "name": "메이",
+        "element": "땅",
+        "weapon": "망치", 
+        "sky": "천"
+    },{
+        "id": 94,
+        "style": 1,
+        "name": "치요",
+        "element": "땅",
+        "weapon": "지팡이",
+        "nonormal": true, 
         "sky": "천"
     },{
         "id": 302,

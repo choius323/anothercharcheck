@@ -97,6 +97,9 @@ function CharCheck({character}) {
     } else if(character.style < 3) {
         return (
             <React.Fragment>
+                {(language==="jap" || (language !== "jap" 
+                                        && !(character.nonormal && array.notAS.includes(character.name))
+                                        && !(array.notNS.includes(character.name)))) ?
                 <Tooltip title={`${chooseLang(language, character.name)}${Normal===2 && character.nonormal ? "(AS)" : ""}`}>
                      <div onClick={toggleNormal} style={{position: "relative", width:70, display: "inline-block"}}>
                         <div className="rank4">{Normal===1 ? "4" : null}</div>
@@ -104,14 +107,14 @@ function CharCheck({character}) {
                         src={`images/character_base/${character.id}_${Normal===2 ? 1 : 0}.png`} 
                         style={{width:70}}/>
                      </div>
-                </Tooltip>
+                </Tooltip> : null}
                 {character.style > 1 && (language==="jap" || (language !== "jap" && 
-                !array.notAS.includes(character.name)) ) && 
+                !array.notAS.includes(character.name)) ) ?
                 <Tooltip title={`${chooseLang(language, character.name)}(AS)`}>
                     <img className={Another ? null : "gray"} onClick={toggleAnother} 
                          src={`images/character_base/${character.id}_2.png`}
                          style={{width:70}} />
-                </Tooltip>}
+                </Tooltip> : null}
             </React.Fragment>
         )
     } else {

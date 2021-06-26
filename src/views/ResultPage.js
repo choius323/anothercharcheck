@@ -43,6 +43,8 @@ function ResultPage(props) {
         }
         if (array.notAS_ID.includes(a.id) && language !== "jap" && a.another)
             a.another = false;   
+        if (array.notAS_ID_4.includes(a.id) && language !== "jap")
+            a.normal = 0; 
     })
     
     let parsedData;
@@ -50,7 +52,9 @@ function ResultPage(props) {
     if(language === "jap") {
         parsedData = data.filter(a => !array.korOnly.includes(a.name))
     } else {
-        parsedData = data.filter(a => !array.japOnly.includes(a.name))
+        parsedData = data.filter(a => !array.japOnly.includes(a.name)
+                                   && !array.notNS_ID.includes(a.id)
+                                   && !(array.notAS_ID.includes(a.id) && a.nonormal))
     }
 
     useEffect(() => {
@@ -83,7 +87,7 @@ function ResultPage(props) {
             dataNo = parsedData.filter(b => !(infoIDs.includes(b.id%300)) && b.id < 300 && !b.free)
         sortArray(dataNo);
         return dataNo.map((item, index) => (
-            <CharResult key={index} character={item} lower={1}/>
+            <CharResult key={index} character={item} lower={item.nonormal ? 2 : 1}/>
         ))
     }
     
@@ -152,7 +156,8 @@ function ResultPage(props) {
         })
         const dataAS = [...new Set(infoAS.map(a => data.find(b => b.id === a.id%300)))]
         const dataASFiltered = dataAS.filter(c => c.style === 2 
-            || (c.style === 1 && c.nonormal && info.find(d => d.id === c.id).normal !== 2))
+            || (c.style === 1 && c.nonormal && info.find(d => d.id === c.id).normal !== 2 
+            && !(language !== 'jap' && array.notAS_ID_4.includes(c.id))))
         sortArray(dataASFiltered);
         return dataASFiltered.map((item, index) => (
             <CharResult key={index} character={item} lower={2}/>
