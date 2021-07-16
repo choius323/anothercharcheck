@@ -54,7 +54,7 @@ function ResultPage(props) {
     } else {
         parsedData = data.filter(a => !array.japOnly.includes(a.name)
                                    && !array.notNS_ID.includes(a.id)
-                                   && !(array.notAS_ID.includes(a.id) && a.nonormal))
+                                   && !(array.notAS_ID_4.includes(a.id) && a.nonormal))
     }
 
     useEffect(() => {
