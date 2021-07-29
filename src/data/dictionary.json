@@ -126,6 +126,7 @@
     { "kor": "베네디트", "jap": "ベネディト", "eng": "Benedict"},
     { "kor": "네코코", "jap": "ねここ", "eng": "Nekoko"},
     { "kor": "가람바렐", "jap": "ガラムバレル", "eng": "Grambrell"},
+    { "kor": "피치카", "jap": "ピチカ", "eng": "Pizzicatd"},
 
     { "kor": "천", "jap": "天", "eng": "Light" },
     { "kor": "명", "jap": "冥", "eng": "Shadow" },
@@ -240,6 +241,7 @@
     {"eng": "Chrysanthemum Cat", "kor": "황금꽃 고양이", "jap": "金花猫"},
     {"eng": "Maiden of Time", "kor": "시간의 소녀", "jap": "とうとき乙女"},
     {"eng": "Hrungnir", "kor": "흐룽그니르", "jap": "フルングニル"},
+    {"eng": "Sirenaria", "kor": "시레나리아", "jap": "シレーナリア"},
 
     {"eng": "Butterfly Warrior", "kor": "불꽃 나비 소녀", "jap": "蝶火女"},
     {"eng": "Hypnotist", "kor": "히프노시스트", "jap": "ヒュプノシスト"},

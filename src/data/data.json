@@ -688,7 +688,23 @@
         "name": "치요",
         "element": "땅",
         "weapon": "지팡이",
+        "nonormal": true,
+        "sky": "천"
+    },{
+        "id": 95,
+        "style": 1,
+        "name": "피치카",
+        "element": "불",
+        "weapon": "활", 
+        "sky": "천"
+    },{
+        "id": 96,
+        "style": 1,
+        "name": "시에라",
+        "element": "물",
+        "weapon": "창",
         "nonormal": true, 
+        "free": true,
         "sky": "천"
     },{
         "id": 302,
