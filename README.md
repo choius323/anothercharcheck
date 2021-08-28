@@ -8,11 +8,11 @@
 日本語 : Japanese Patch
 
 ### 기능 소개
-1. Checklist
+#### 1. Checklist
 - 보유한 5성 캐릭터를 체크할 수 있습니다.    
 - Download 기능   
 
-2. Result
+#### 2. Result
 - 체크한 데이터를 기반으로 캐릭터 풀을 분석합니다.   
 - Download 기능 
 
