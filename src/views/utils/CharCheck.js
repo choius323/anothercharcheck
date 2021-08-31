@@ -88,11 +88,20 @@ function CharCheck({character}) {
 
     if(array.only5Char.indexOf(character.name) >= 0) {
         return (
-            <Tooltip title={chooseLang(language, character.name)}>
-                <img onClick={toggleOnly5Normal} className={Only5Normal === 0 ? "gray" : null}
-                src={`images/character_base/${character.id}_1.png`} 
-                style={{width:70}}/>
-            </Tooltip>
+            <React.Fragment>
+                <Tooltip title={chooseLang(language, character.name)}>
+                    <img onClick={toggleOnly5Normal} className={Only5Normal === 0 ? "gray" : null}
+                    src={`images/character_base/${character.id}_1.png`} 
+                    style={{width:70}}/>
+                </Tooltip>
+                {character.style > 1 && (language==="jap" || (language !== "jap" && 
+                !array.notAS.includes(character.name)) ) ?
+                <Tooltip title={`${chooseLang(language, character.name)}(AS)`}>
+                    <img className={Another ? null : "gray"} onClick={toggleAnother} 
+                        src={`images/character_base/${character.id}_2.png`}
+                        style={{width:70}} />
+                </Tooltip> : null}
+            </React.Fragment>
         )
     } else if(character.style < 3) {
         return (

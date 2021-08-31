@@ -134,7 +134,7 @@
         "sky": "명"
     },{
         "id": 19,
-        "style": 1,
+        "style": 2,
         "name": "레비아",
         "element": "물",
         "weapon": "지팡이",
@@ -719,6 +719,13 @@
         "name": "츠키하",
         "element": "바람",
         "weapon": "활", 
+        "sky": "명"
+    },{
+        "id": 337,
+        "style": 3,
+        "name": "나기",
+        "element": "결정",
+        "weapon": "지팡이", 
         "sky": "명"
     }
 ]
