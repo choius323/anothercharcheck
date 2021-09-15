@@ -299,7 +299,7 @@
         "sky": "천"
     },{
         "id": 42,
-        "style": 1,
+        "style": 2,
         "name": "제빌로",
         "element": "물",
         "weapon": "도끼", 
