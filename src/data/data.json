@@ -707,6 +707,13 @@
         "free": true,
         "sky": "천"
     },{
+        "id": 97,
+        "style": 1,
+        "name": "히나기쿠",
+        "element": "땅",
+        "weapon": "망치", 
+        "sky": "명"
+    },{
         "id": 302,
         "style": 3,
         "name": "메리나",

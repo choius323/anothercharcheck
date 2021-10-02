@@ -127,6 +127,7 @@
     { "kor": "네코코", "jap": "ねここ", "eng": "Nekoko"},
     { "kor": "가람배럴", "jap": "ガラムバレル", "eng": "Grambrell"},
     { "kor": "피치카", "jap": "ピチカ", "eng": "Pizzicatd"},
+    { "kor": "히나기쿠", "jap": "ヒナギク", "eng": "Daisy"},
 
     { "kor": "천", "jap": "天", "eng": "Light" },
     { "kor": "명", "jap": "冥", "eng": "Shadow" },
@@ -167,6 +168,9 @@
     { "kor": "채굴", "jap": "採掘", "eng": "Miner" },
     { "kor": "과학자", "jap": "科学者", "eng": "Scientist" },
     { "kor": "합성인간", "jap": "合成人間", "eng": "Synth Human" },
+    { "kor": "왕족", "jap": "王族", "eng": "Royalty" },
+    { "kor": "연옥계", "jap": "煉獄界", "eng": "Purgatory" },
+    { "kor": "북방", "jap": "北方", "eng": "Northern" },
 
     { "kor": "안경은 AS 획득 시에만", "jap": "メガネ : AS 獲得時", "eng": "Glasses : AS required" },
     { "kor": "애묘가는 AS 획득 시에만", "jap": "ねこ好き : AS 獲得時", "eng": "Cat Lover : AS required" },
@@ -242,6 +246,7 @@
     {"eng": "Maiden of Time", "kor": "시간의 소녀", "jap": "とうとき乙女"},
     {"eng": "Hrungnir", "kor": "흐룽그니르", "jap": "フルングニル"},
     {"eng": "Sirenaria", "kor": "시레나리아", "jap": "シレーナリア"},
+    {"eng": "Emma", "kor": "염라", "jap": "エンマ"},
 
     {"eng": "Butterfly Warrior", "kor": "불꽃 나비 소녀", "jap": "蝶火女"},
     {"eng": "Hypnotist", "kor": "히프노시스트", "jap": "ヒュプノシスト"},
@@ -282,14 +287,17 @@
     {"eng": "Susanoo", "kor": "스사노오", "jap":"スサノオ"},
     {"eng": "Draco Nodus", "kor": "드라코 노두스", "jap":"ドラグノードゥス"},
     {"eng": "Abyssal Liberator", "kor": "어비스 리버레이터", "jap": "アビスリベレータ"},
-    {"eng": "Feliculus", "kor": "펠리쿠루스", "jap": "フェーリクルス"},
-    {"eng": "Jade Tea Goddess", "kor": "옥차 아가씨", "jap": "玉茶娘々"},
+    {"eng": "Felis Circulus", "kor": "펠레쿨루스", "jap": "フェーリクルス"},
+    {"eng": "Jade Tea Goddess", "kor": "옥차낭랑", "jap": "玉茶娘々"},
     {"eng": "Ometeotl", "kor": "오메테오틀", "jap": "オメテオトル"},
     {"eng": "Sayorihime", "kor": "사요리히메", "jap": "サヨリヒメ"},
     {"eng": "Maverick", "kor": "매버릭", "jap": "マーヴェリック"},
+    {"eng": "Transporter", "kor": "트랜스포터", "jap": "トランスポーター"},
+    {"eng": "Soul Keeper", "kor": "소울 키퍼", "jap": "ソウルキーパー"},
 
     {"eng": "Hecatoncheires", "kor": "헤카톤케일", "jap": "ヘカトンケイル"},
     {"eng": "Shinatsuhime no Kami", "kor": "시나츠히메노카미", "jap": "シナツヒメノカミ"},
+    {"eng": "Little Cthulhu", "kor": "크리틀리틀", "jap": "クリトルリトル"},
 
     {"kor": "나다라 화산", "jap": "ナダラ火山", "eng": "Nadara Volcano"},
     {"kor": "별의 탑", "jap": "星の塔", "eng": "Tower of Stars"},
@@ -326,7 +334,8 @@
     {"kor": "고대 가를레아 대륙", "jap": "古代ガルレア大陸", "eng": "Antiquity Garulea Continent"},
     {"kor": "미래 가를레아 대륙", "jap": "未来ガルレア大陸", "eng": "Future Garulea Continent"},
     {"kor": "명협계", "jap": "冥峡界", "eng": "World of the Shadow"},
-    {"kor": "망향의 아틀리에", "jap": "忘郷のアトリエ", "eng": "Painting Trial"},
+    {"kor": "망향의 아틀리에 - 묘소", "jap": "忘郷のアトリエ - 墓所", "eng": "Painting Trial"},
+    {"kor": "망향의 아틀리에 - 순례", "jap": "忘郷のアトリエ - 巡礼", "eng": "Purgatory(Limbo)'s Pilgrimage"},
    
     {"kor": "홈으로 이동합니다.", "jap": "ホームに移動します。", "eng": "Back to Main"},
 
@@ -435,7 +444,7 @@
         "kor": "신의 능묘",
         "jap": "神の印の陵墓"    },
     {   "eng": "Demon's Den",
-        "kor": "도깨비굴",
+        "kor": "귀화동굴",
         "jap": "鬼火洞"         },
     {   "eng": "The Dimensional Cathedral",
         "kor": "차원대성당",
@@ -591,6 +600,10 @@
     {   "kor": "통곡의 묘소", "jap": "慟哭の墓所", "eng": "Graveyard of Tears"},
     {   "kor": "통곡의 묘소 2", "jap": "慟哭の墓所 2", "eng": "Graveyard of Tears 2"},
     {   "kor": "루차나 고적", "jap": "ルチャナ旧跡", "eng": "Ruins of Rucyana"},
+    {   "kor": "불의 순례", "jap": "火属性の巡礼", "eng": "Purgatory of Fire"},
+    {   "kor": "물의 순례", "jap": "水属性の巡礼", "eng": "Purgatory of Water"},
+    {   "kor": "바람의 순례", "jap": "風属性の巡礼", "eng": "Purgatory of Wind"},
+    {   "kor": "땅의 순례", "jap": "地属性の巡礼", "eng": "Purgatory of Earth"},
 
     {"kor": "캐릭터, 책 이름 입력",
      "jap": "キャラ、記憶の書",
