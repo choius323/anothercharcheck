@@ -721,6 +721,13 @@
         "weapon": "권갑", 
         "sky": "명"
     },{
+        "id": 330,
+        "style": 3,
+        "name": "이스카",
+        "element": "그림자",
+        "weapon": "검", 
+        "sky": "천"
+    },{
         "id": 331,
         "style": 3,
         "name": "츠키하",
